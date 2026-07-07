@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>YouFlex - 글쓰기</title>
+<link rel="stylesheet" href="assets/common.css" />
+<link rel="stylesheet" href="assets/css/11_write.css" />
+</head>
+<body>
+
+<div class="dev-pagebar">
+  <a href="01_main.html">01 메인</a>
+  <a href="02_login.html">02 로그인</a>
+  <a href="03_join.html">03 회원가입</a>
+  <a href="04_list.html">04 게시글 목록</a>
+  <a href="05_notice.html">05 공지/Q&A</a>
+  <a href="06_notice_detail.html">06 공지 상세</a>
+  <a href="07_notice_update.html">07 공지 수정</a>
+  <a href="08_qna_detail.html">08 Q&A 상세</a>
+  <a href="09_qna_write.html">09 질문 작성</a>
+  <a href="10_qna_update.html">10 질문 수정</a>
+  <a href="11_write.html" class="current">11 글쓰기</a>
+  <a href="12_update.html">12 게시글 수정</a>
+  <a href="13_detail.html">13 게시글 상세</a>
+  <a href="14_mypage.html">14 마이페이지</a>
+  <a href="15_admin.html">15 관리자</a>
+  <a href="16_error.html?code=404">16 오류(404)</a>
+  <a href="16_error.html?code=500">16 오류(500)</a>
+  <label style="margin-left:auto;color:#888">데모 등급:
+    <select id="demoRoleSwitcher">
+      <option value="guest">Lv.0 구경꾼(비회원)</option>
+      <option value="user">Lv.1 시청자(일반회원)</option>
+      <option value="critic">Lv.2 평론가(고급회원)</option>
+      <option value="admin">Lv.99 관리자</option>
+    </select>
+  </label>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <a href="01_main.html" class="logo"><img src="assets/img/logo.png" alt="YouFlex" /></a>
+    <div class="search-bar"><span class="icon">🔍</span><input type="text" placeholder="콘텐츠, 게시글 통합 검색" /></div>
+    <div class="header-actions">
+      <a href="14_mypage.html" class="btn btn-ghost">마이페이지</a>
+      <a href="#" class="btn btn-ghost">로그아웃</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <div class="write-page-grid">
+  <div class="write-wrap">
+    <h1>리뷰 작성</h1>
+
+    <form id="reviewForm">
+    <div class="row-2">
+      <div class="form-row">
+        <label>카테고리 (장르)</label>
+        <select id="genre_category_id" name="genre_category_id">
+          <option value="1">영화</option>
+          <option value="2">드라마</option>
+          <option value="3">예능</option>
+          <option value="4">애니메이션</option>
+          <option value="5">다큐멘터리</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>플랫폼</label>
+        <select id="review_platform" name="review_platform">
+          <option>넷플릭스</option>
+          <option>티빙</option>
+          <option>디즈니+</option>
+          <option>웨이브</option>
+          <option>쿠팡플레이</option>
+          <option>기타</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label>제목</label>
+      <input type="text" id="review_title" name="review_title" placeholder="제목을 입력하세요" />
+    </div>
+
+    <div class="form-row">
+      <label>대표 이미지</label>
+      <div class="upload-box">📷 클릭하거나 파일을 드래그하여 업로드 (선택)</div>
+    </div>
+
+    <div class="form-row">
+      <label>본문</label>
+      <textarea id="review_content" name="review_content" placeholder="리뷰 내용을 입력하세요"></textarea>
+      <div class="hint-line">※ 등록된 내용은 비속어 필터링이 자동 적용됩니다.</div>
+    </div>
+
+    <div class="form-row">
+      <label>관련작품</label>
+      <input type="text" id="review_related" name="review_related" placeholder="관련 작품명을 입력하세요 (예: 오징어게임 3)" />
+    </div>
+
+    <div class="write-toolbar">
+      <span class="autosave-hint" id="autosaveHint">임시저장된 내용 없음</span>
+      <div class="flex gap-8" style="align-items:center">
+        <span class="text-muted" style="font-size:12px">제목과 내용만 저장 가능합니다</span>
+        <button type="button" class="btn" id="draftBtn">임시저장</button>
+        <button type="button" class="btn btn-primary" id="submitBtn">등록</button>
+      </div>
+    </div>
+    </form>
+  </div>
+
+  <aside class="draft-sidebar">
+    <h3>임시저장 목록</h3>
+    <div id="draftList"></div>
+    <p class="text-muted" id="draftEmptyMsg" style="font-size:12px">임시저장된 글이 없습니다.</p>
+  </aside>
+  </div>
+</main>
+
+<footer class="site-footer"><div class="container">YouFlex 화면 초안 (Wireframe Draft)</div></footer>
+
+<script src="assets/app.js"></script>
+<script src="assets/js/11_write.js"></script>
+</body>
+</html>

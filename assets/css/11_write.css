@@ -1,0 +1,24 @@
+/* ==========================================================================
+   11_write.html (리뷰 글쓰기 화면) 전용 스타일
+   왼쪽 큰 작성 폼 + 오른쪽 임시저장 목록 사이드바, 2단 그리드 레이아웃
+   ========================================================================== */
+
+.write-page-grid { display:grid; grid-template-columns:1fr 280px; gap:24px; align-items:start; max-width:1060px; margin:32px auto; } /* 왼쪽 작성폼 | 오른쪽 임시저장 사이드바 */
+.write-wrap { max-width: none; margin: 0; } /* common.css .notice-detail-wrap류와 달리 폭 제한 없이 그리드 칸을 꽉 채움 */
+.write-wrap h1 { font-size:22px; margin-bottom:20px; }
+
+/* ---------- 오른쪽 "임시저장 목록" 사이드바 ---------- */
+.draft-sidebar { background:var(--bg-1); border:1px solid var(--border); border-radius:var(--radius); padding:20px; position:sticky; top:20px; } /* 스크롤해도 화면에 붙어있게 sticky */
+.draft-sidebar h3 { font-size:15px; margin:0 0 14px; }
+.draft-item { display:flex; align-items:center; justify-content:space-between; gap:8px; padding:10px 12px; border:1px solid var(--border); border-radius:8px; margin-bottom:10px; } /* 임시저장 글 하나(제목+시간 | 불러오기/삭제 버튼) */
+.draft-item:hover { border-color:var(--accent); }
+.draft-info { min-width:0; flex:1; }
+.draft-item .draft-title { font-size:13px; font-weight:700; margin-bottom:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; } /* 제목이 길면 "..."으로 줄여서 표시 */
+.draft-item .draft-time { font-size:11px; color:var(--text-2); white-space:nowrap; }
+.draft-actions { display:flex; gap:4px; flex-shrink:0; }
+.draft-actions button { padding:5px 8px; font-size:11px; white-space:nowrap; } /* "불러오기"/"삭제" 작은 버튼 */
+
+/* ---------- 작성폼 하단, "임시저장 / 등록" 버튼이 있는 툴바 ---------- */
+.write-toolbar { display:flex; justify-content:space-between; align-items:center; margin-top:24px; }
+.autosave-hint { font-size:12px; color:var(--text-2); }         /* "임시저장된 내용 없음" / "임시저장됨 (HH:MM)" 안내 문구 */
+.autosave-hint.saved { color:var(--success); }                  /* 저장 성공하면 초록색으로 강조 */

@@ -1,0 +1,70 @@
+/* ==========================================================================
+   13_detail.html (게시글 상세 화면) 전용 스타일
+   리뷰 본문 + 별점 + 좋아요/북마크/신고 + 베스트댓글/전체댓글 + 신고 모달
+   ========================================================================== */
+
+.detail-wrap { max-width: 860px; margin: 32px auto; }
+.detail-meta-top { display:flex; align-items:center; gap:10px; color:var(--text-2); font-size:13px; margin-bottom:8px; } /* 제목 위, 카테고리 뱃지 + 조회수 줄 */
+.detail-title { font-size:26px; font-weight:800; margin:0 0 16px; }
+
+/* ---------- 작성자 프로필 줄 (아바타 + 이름/등급 + 작성일, 오른쪽엔 수정/삭제 버튼) ---------- */
+.author-row { display:flex; align-items:center; justify-content:space-between; padding-bottom:16px; border-bottom:1px solid var(--border); }
+.author-info { display:flex; align-items:center; gap:10px; }
+.author-avatar { width:40px; height:40px; border-radius:50%; background:var(--bg-3); }
+.author-name { font-weight:700; font-size:14px; }
+.author-sub { font-size:12px; color:var(--text-2); }
+.owner-actions { display:flex; gap:8px; } /* 작성자 본인 / 관리자에게만 보이는 수정·삭제 버튼 묶음 (data-role-visible로 JS가 표시 제어) */
+
+/* ---------- 평균 별점 + 내 별점 매기기 ---------- */
+.rating-block { display:flex; align-items:center; gap:10px; margin:20px 0; }
+.rating-block .score { font-size:22px; font-weight:800; color:var(--gold); }
+
+/* ---------- 리뷰 본문 (대표 이미지 + 텍스트 + 관련작품 뱃지) ---------- */
+.post-body-img { aspect-ratio:16/9; background:linear-gradient(135deg,var(--bg-3),var(--bg-2)); border-radius:var(--radius); display:flex; align-items:center; justify-content:center; color:var(--text-2); margin:20px 0; }
+.post-body-text { line-height:1.8; color:var(--text-1); font-size:15px; }
+.related-works { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:20px 0; font-size:13px; }
+.related-works strong { color:var(--text-1); font-weight:700; margin-right:2px; }
+
+/* ---------- 좋아요 / 북마크 / 신고 버튼 줄 ---------- */
+.interaction-bar { display:flex; gap:10px; margin:28px 0; padding:16px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+.interaction-bar .btn.active { background: var(--accent); border-color: var(--accent); color:#fff; } /* 이미 좋아요를 누른 상태를 강조 표시 */
+
+/* ---------- 댓글 영역 전체 ---------- */
+.comment-section { margin-top: 32px; }
+
+/* 댓글 입력창 + 등록 버튼 줄 */
+.comment-input-row { display:flex; gap:10px; margin-bottom:24px; }
+.comment-input-row input { flex:1; background:var(--bg-2); border:1px solid var(--border); border-radius:8px; padding:12px; color:#fff; }
+
+/* 댓글 한 개 (작성자/날짜 + 본문 + 좋아요/신고 버튼) */
+.comment-item { padding: 14px 0; border-bottom: 1px solid var(--border); }
+.comment-item .c-head { display:flex; align-items:center; justify-content:space-between; font-size:13px; margin-bottom:6px; }
+.comment-item .c-head-left { display:flex; align-items:center; gap:6px; } /* 작성자 이름 옆에 BEST 뱃지를 같이 두기 위한 묶음 */
+.comment-item .c-author { font-weight:700; }
+.comment-item .c-date { color:var(--text-2); }
+.comment-item .c-body { font-size:14px; color:var(--text-1); }
+.comment-actions { margin-top:6px; display:flex; gap:12px; font-size:12px; color:var(--text-2); }
+
+/* "🏆 베스트 댓글" / "전체 댓글" 구분용 작은 소제목 */
+.comment-subheading { font-size:13px; font-weight:700; color:var(--text-2); margin:24px 0 10px; }
+.comment-subheading:first-of-type { margin-top:20px; }
+
+/* 베스트 댓글 3개에 붙는 골드 톤 강조 스타일 (왼쪽 강조선 + 은은한 배경) */
+.comment-item.best {
+  background: rgba(245,197,24,0.07);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding-left: 12px;
+}
+
+/* 댓글 좋아요(♥) 클릭 버튼 - 누르면 빨간색으로 바뀌고 숫자가 +1/-1 토글됨 */
+.comment-like { cursor:pointer; user-select:none; }
+.comment-like:hover { color:var(--text-1); }
+.comment-like.liked { color:var(--accent); font-weight:700; }
+
+/* ---------- 신고하기 모달 (common.css .report-modal 공용 껍데기를 이 화면에 맞게 세부 조정) ---------- */
+.report-modal { width:380px; }
+.report-modal .form-row label { font-size:12px; }                                   /* 모달 안 라벨은 본문 폼보다 살짝 작게 */
+.report-modal .form-row select, .report-modal .form-row textarea { padding:10px; font-size:13px; }
+.report-modal .form-row textarea { min-height:120px; }                              /* common.css 기본 textarea(min-height:280px)보다 작게 - 신고 상세 내용은 짧으니까 */
+.btn-row .btn { flex:1; } /* 신고 모달의 "취소/신고하기" 버튼을 폭 절반씩 꽉 채워서 배치 */

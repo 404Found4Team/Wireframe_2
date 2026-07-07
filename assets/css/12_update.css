@@ -1,0 +1,26 @@
+/* ==========================================================================
+   12_update.html (게시글 수정 화면) 전용 스타일
+   11_write.html(글쓰기)과 다른 느낌을 주기 위해 상단에 게시글 메타 정보,
+   "수정됨" 안내 문구 등을 추가로 보여주는 레이아웃
+   ========================================================================== */
+
+.edit-wrap { max-width: 760px; margin: 32px auto; }
+
+/* ---------- 상단 "게시글 수정" 제목 + 게시글 번호/작성일 chip ---------- */
+.edit-header { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:20px; }
+.edit-header h1 { font-size:22px; margin:0; }
+.target-chip { padding:8px 12px; white-space:nowrap; margin-bottom:0; } /* common.css .target-chip 기본값(margin-bottom:16px)을 이 화면에선 0으로 재정의 - 헤더 안에서 제목과 나란히 있어서 */
+
+/* ---------- 조회수/좋아요/댓글 수를 보여주는 회색 박스 ---------- */
+.edit-meta-box { display:flex; gap:20px; flex-wrap:wrap; background:var(--bg-1); border:1px solid var(--border); border-radius:var(--radius); padding:14px 16px; margin-bottom:16px; font-size:12px; color:var(--text-2); }
+.edit-meta-box strong { color:var(--text-1); }
+
+/* ---------- "수정 완료 시 '수정됨' 표시가 노출됩니다" 노란색 안내 문구 ---------- */
+.edit-notice { display:flex; gap:8px; align-items:flex-start; background:rgba(245,197,24,0.08); border:1px solid rgba(245,197,24,0.3); border-radius:var(--radius); padding:12px 14px; font-size:12px; color:var(--gold); margin-bottom:24px; }
+
+/* ---------- 대표 이미지: 이미 등록된 썸네일 + 교체 안내 문구 (새 글쓰기와 달리 기존 이미지가 있음) ---------- */
+.upload-box { padding:16px; text-align:left; display:flex; align-items:center; gap:12px; } /* common.css 기본 upload-box(가운데 정렬, 큰 패딩)와 다르게 왼쪽 정렬 + 가로 배치로 재정의 */
+.current-thumb { width:80px; height:50px; border-radius:4px; background:linear-gradient(135deg,var(--bg-3),var(--bg-2)); flex-shrink:0; }
+
+/* 하단 "취소 / 수정 완료" 버튼 줄 */
+.edit-toolbar { display:flex; justify-content:flex-end; align-items:center; margin-top:24px; gap:8px; }
