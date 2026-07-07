@@ -20,7 +20,21 @@
 .rating-block .score { font-size:22px; font-weight:800; color:var(--gold); }
 
 /* ---------- 리뷰 본문 (대표 이미지 + 텍스트 + 관련작품 뱃지) ---------- */
-.post-body-img { aspect-ratio:16/9; background:linear-gradient(135deg,var(--bg-3),var(--bg-2)); border-radius:var(--radius); display:flex; align-items:center; justify-content:center; color:var(--text-2); margin:20px 0; }
+
+/* 사진 영역 수정완료 */
+.post-body-img {
+  width: 100%; 
+  border-radius: var(--radius); 
+  margin: 20px 0; 
+  overflow: hidden; 
+  background: linear-gradient(135deg, var(--bg-3), var(--bg-2));
+}
+.post-body-img img {
+  width: 100%;
+  height: auto;      
+  display: block;     /* 1. 인라인 속성을 블록 속성으로 체인지해 글자 공백 제거 */
+  vertical-align: bottom; /* 2. 만약 display 변경이 안 먹힐 때를 대비한 교차 방어선 */
+}
 .post-body-text { line-height:1.8; color:var(--text-1); font-size:15px; }
 .related-works { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:20px 0; font-size:13px; }
 .related-works strong { color:var(--text-1); font-weight:700; margin-right:2px; }
