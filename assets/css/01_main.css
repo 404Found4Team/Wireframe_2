@@ -103,6 +103,9 @@
   position: relative;
   z-index: 2;
   color: #ffffff;
+
+  /* 수정 부분 */
+  /* padding-top: 20px; */
 }
 .hero-slide-content h1 {
   font-size: 32px;
