@@ -203,6 +203,7 @@ function initHeroSlider() {
   const AUTO_PLAY_MS = 5000;
   let index = 0;
   let timerId = null;
+console.log(slides.length);
 
   function showSlide(i) {
     index = (i + slides.length) % slides.length;
