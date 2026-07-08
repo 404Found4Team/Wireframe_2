@@ -42,3 +42,28 @@
 .write-toolbar { display:flex; justify-content:space-between; align-items:center; margin-top:24px; }
 .autosave-hint { font-size:12px; color:var(--text-2); }         /* "임시저장된 내용 없음" / "임시저장됨 (HH:MM)" 안내 문구 */
 .autosave-hint.saved { color:var(--success); }                  /* 저장 성공하면 초록색으로 강조 */
+
+/* 별점(웅조) */
+.form-group{
+  padding-bottom: 20px;
+}
+
+/* ── 별점 ── */
+.stars { color: #f39c12; font-size: 1.1rem; letter-spacing: 2px; }
+.stars-sm { color: #f39c12; font-size: 0.9rem; }
+.rating-input { display: flex; gap: 6px; }
+.rating-input span {
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: #ddd;
+    transition: color 0.1s;
+}
+.rating-input span.active { color: #f39c12; }
+
+/* 대표이미지 수정(웅조) */
+.wrap-representative-img > input{
+  width: 27%;
+  background-color: rgba(11,13,16,0.95);
+  border: none;
+  padding: 0px;
+}

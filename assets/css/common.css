@@ -472,6 +472,7 @@ body.notification-open #chatbotPanel.slide-panel { right: 408px; }
   width:100%; background:var(--bg-2); border:1px solid var(--border); border-radius:6px;
   padding:11px; color:#fff; font-size:14px; font-family:inherit;
 }
+
 .form-row input:focus,
 .form-row select:focus,
 .form-row textarea:focus { outline:none; border-color:var(--accent); } /* 입력 중일 때 테두리를 포인트 색으로 */

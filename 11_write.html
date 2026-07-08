@@ -56,14 +56,32 @@
       <input type="text" id="review_title" name="review_title" placeholder="제목을 입력하세요" />
     </div>
 
+    <!-- 별점 수정(웅조) -->
+     <div class="form-group">
+				<label>별점 ★</label>
+				<div class="rating-input">
+					<span class="active">★</span>
+					<span class="active">★</span>
+					<span class="active">★</span>
+					<span class="active">★</span>
+					<span>★</span>
+				</div>
+				<!-- 별점값 js에서 클릭시 value를 업데이트 -->
+				<input type="hidden" name="postRating" value="4">
+				<div class="text-muted text-sm mt-8">별을 클릭해서 별점을 선택하세요 (1~5점)</div>
+			</div>
+
+    <!-- 대표이미지 수정(웅조) -->
     <div class="form-row">
       <label>대표 이미지</label>
+      <div class="wrap-representative-img">
       <!-- <div class="upload-box"> -->
         <!-- <input> 추가완료 -->
-        <input type="file" name="imgFile" id="imgInput" accept="image/*" style="font-size:0.85rem;">
-      <!-- </div> -->
-      <img id="imgPreview" alt="미리보기"
+        <input type="file" name="imgFile" id="imgInput" accept="image/*" style="font-size:0.85rem;" class="representative-img">
+        <!-- </div> -->
+        <img id="imgPreview" alt="미리보기"
           style="display:none; max-width:100%; max-height:200px; object-fit:cover; border-radius:8px; margin-top:10px;">
+      </div>
     </div>
 
     <div class="form-row">
