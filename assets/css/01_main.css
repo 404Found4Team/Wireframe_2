@@ -58,7 +58,8 @@
   height: 100%;
 
   /* 글자 콘텐츠 배치용 패딩 (원하시는 대로 조절) - 상단만 200px, 나머지는 60px */
-  padding: 200px 60px 60px;
+  /* 배너 글자 위치조정 -나영- */
+  padding: 10px 15px 10px;
   box-sizing: border-box;
 }
 .hero-slide-content.active {
