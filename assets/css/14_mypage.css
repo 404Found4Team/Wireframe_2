@@ -39,3 +39,8 @@
 /* ---------- 취향(관심 장르) 선택 모달 하단 "취소 / 저장" 버튼 줄 (common.css .genre-modal-* 껍데기에 추가) ---------- */
 .genre-modal-actions { display:flex; gap:8px; margin-top:4px; }
 .genre-modal-actions .btn { flex:1; }
+/* 내글 썸네일 추가 -나영- */
+.post-img{
+  width: 100px;
+  height: 100%;
+}
