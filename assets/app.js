@@ -262,7 +262,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   initOverlay("chatbotPanel", "chatbotBackdrop", ["chatbotFab"], ["chatbotClose"]);
   initOverlay("chatroomPanel", "chatroomBackdrop", ["chatroomTrigger"], ["chatroomClose"], "chatroom-open");
-  initOverlay("notificationPanel", "notificationBackdrop", ["notificationTrigger"], ["notificationClose"]);
+  initOverlay("notificationPanel", "notificationBackdrop", ["notificationTrigger"], ["notificationClose"], "notification-open");
 
   initTabs(".panel-tabs");
   initTabs(".mypage-tabs");

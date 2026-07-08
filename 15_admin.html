@@ -9,7 +9,11 @@
 </head>
 <body>
 
-<!-- 공통 헤더 영역 -->
+<!-- 
+  =========================================
+  공통 헤더 영역
+  =========================================
+-->
 <header class="site-header">
   <div class="container">
     <a href="01_main.html" class="logo"><img src="assets/img/logo.png" alt="YouFlex" /></a>
@@ -19,11 +23,19 @@
   </div>
 </header>
 
-<!-- 메인 영역 -->
+<!-- 
+  =========================================
+  메인 영역 
+  =========================================
+-->
 <main class="container">
   <h1 class="mt-24" style="font-size:22px">관리자 대시보드</h1>
 
-  <!-- 대시보드 요약 (항상 표시) -->
+  <!--
+    ========================================= 
+    대시보드 요약 (항상 표시) 
+    =========================================
+  -->
   <div class="mt-24">
     <div class="kpi-grid">
       <div class="card kpi-card">
@@ -54,7 +66,11 @@
     </div>
   </div>
 
-  <!-- 관리자 기능 탭 -->
+  <!--
+    ========================================= 
+    관리자 기능 탭 
+    =========================================
+    -->
   <nav class="admin-nav" data-tab-panels>
     <button class="active" data-tab-target="users">회원 관리</button>
     <button data-tab-target="reports">신고 처리</button>
@@ -63,7 +79,11 @@
     <button data-tab-target="banner">배너 설정</button>
   </nav>
 
-  <!-- 회원 관리 탭 -->
+  <!--
+    ========================================= 
+    회원 관리 탭 
+    =========================================
+  -->
   <div data-tab-panel="users" class="mt-24">
     <div class="member-subtabs">
       <button class="active" data-subtab="list">회원 목록</button>
@@ -71,7 +91,11 @@
       <button data-subtab="withdraw">탈퇴 신청 대기</button>
     </div>
 
-    <!-- 회원 목록 -->
+    <!-- 
+      =========================================
+      회원 목록 
+      =========================================
+      -->
     <div data-subpanel="list">
       <div class="member-search-row">
         <input type="text" id="memberSearchInput" placeholder="회원 아이디, 이름 또는 이메일로 검색" />
@@ -132,7 +156,11 @@
       <div class="member-pagination" id="memberPagination"></div>
     </div>
 
-    <!-- 등업 신청 -->
+    <!-- 
+      =========================================
+      등업 신청 
+      =========================================
+      -->
     <div data-subpanel="promote" style="display:none">
       <table class="table">
         <thead><tr><th>닉네임</th><th>현재 등급</th><th>신청 등급</th><th>신청일</th><th>상태</th><th></th></tr></thead>
@@ -159,7 +187,11 @@
       </table>
     </div>  
 
-    <!-- 탈퇴 신청 -->
+    <!-- 
+      =========================================
+      탈퇴 신청 
+      =========================================
+      -->
     <div data-subpanel="withdraw" style="display:none">
       <table class="table">
         <thead><tr><th>회원번호</th><th>회원아이디</th><th>닉네임</th><th>신청일</th><th>상태</th><th></th></tr></thead>
@@ -199,7 +231,11 @@
     </div>
   </div>
 
-  <!-- 신고 처리 -->
+  <!-- 
+    =========================================
+    신고 처리 
+    =========================================
+    -->
   <div data-tab-panel="reports" class="mt-24" style="display:none">
     <table class="table">
       <thead><tr><th>대상</th><th>내용 요약</th><th>신고자</th><th>사유</th><th>접수일</th><th>상태</th><th></th></tr></thead>
@@ -220,7 +256,11 @@
     </table>
   </div>
 
-  <!-- Q&A 답변 -->
+  <!-- 
+    =========================================
+    Q&A 답변 
+    =========================================
+    -->
   <div data-tab-panel="qna" class="mt-24" style="display:none">
     <table class="table">
       <thead><tr><th>번호</th><th>제목</th><th>작성자</th><th>등록일</th><th>상태</th><th></th></tr></thead>
@@ -250,7 +290,11 @@
     </table>
   </div>
 
-  <!-- 공지사항 등록 -->
+  <!-- 
+    =========================================
+    공지사항 등록 
+    =========================================
+    -->
   <div data-tab-panel="notice" class="mt-24" style="display:none">
     <div class="card" style="max-width:600px">
       <form id="noticeCreateForm">
@@ -267,7 +311,11 @@
     </div>
   </div>
 
-  <!-- 배너 설정 -->
+  <!--
+    =========================================
+    배너 설정 
+    =========================================
+    -->
   <div data-tab-panel="banner" class="mt-24" style="display:none">
     <div class="flex-between" style="margin-bottom:12px">
       <span class="text-muted" style="font-size:12px">메인 화면 상단 히어로 배너에 노출되는 슬라이드를 관리합니다.</span>
@@ -293,7 +341,11 @@
   </div>
 </main>
 
-<!-- Q&A 답변 작성/수정 모달 -->
+<!-- 
+  =========================================
+  Q&A 답변 작성/수정 모달 
+  =========================================
+  -->
 <div class="report-modal-backdrop" id="qnaModalBackdrop">
   <div class="report-modal" style="width:480px">
     <h3>💬 Q&A 답변 작성</h3>
@@ -314,7 +366,11 @@
   </div>
 </div>
 
-<!-- 경고 처리 모달 -->
+<!-- 
+  =========================================
+  경고 처리 모달 
+  =========================================
+-->
 <div class="report-modal-backdrop" id="warningModalBackdrop">
   <div class="report-modal" style="width:360px">
     <h3>⚠ 경고 처리</h3>
@@ -331,7 +387,11 @@
   </div>
 </div>
 
-<!-- 경고 차감 모달 -->
+<!-- 
+  =========================================
+  경고 차감 모달 
+  =========================================
+  -->
 <div class="report-modal-backdrop" id="warningRevokeModalBackdrop">
   <div class="report-modal" style="width:360px">
     <h3>➖ 경고 차감</h3>
@@ -343,7 +403,11 @@
   </div>
 </div>
 
-<!-- 배너 추가/수정 모달 -->
+<!-- 
+  =========================================
+  배너 추가/수정 모달 
+  ========================================= 
+  -->
 <div class="report-modal-backdrop" id="bannerModalBackdrop">
   <div class="report-modal" style="width:440px">
     <h3 id="bannerModalTitle">🖼 배너 추가</h3>
@@ -376,7 +440,28 @@
   </div>
 </div>
 
-<footer class="site-footer"><div class="container">YouFlex 화면 초안 (Wireframe Draft)</div></footer>
+<!-- 
+  =========================================
+  푸터 영역
+  ========================================= 
+  -->
+<footer class="site-footer main-footer">
+  <div class="container main-footer-inner">
+    <div class="main-footer-brand">
+      <a href="01_main.html" class="logo"><img src="assets/img/logo.png" alt="YouFlex" /></a>
+      <p>당신의 콘텐츠 취향을 연결하는<br />OTT 리뷰 &amp; 커뮤니티 플랫폼</p>
+    </div>
+    <div class="main-footer-info">
+      <p>(주)YouFlex&nbsp;&nbsp;|&nbsp;&nbsp;대표: YouFlex&nbsp;&nbsp;|&nbsp;&nbsp;사업자등록번호: 000-00-00000</p>
+      <p>개인정보관리책임자: YouFlex</p>
+      <p>이메일: youflex@youflex.com&nbsp;&nbsp;|&nbsp;&nbsp;고객센터: 00-000-0000</p>
+    </div>
+    <div class="main-footer-meta">
+      <p>&copy; 2026 YouFlex. All rights reserved.</p>
+    </div>
+    <button class="main-footer-top" id="footerTopBtn" title="맨 위로">↑</button>
+  </div>
+</footer>
 
 <script src="assets/app.js"></script>
 <script src="assets/js/15_admin.js"></script>
