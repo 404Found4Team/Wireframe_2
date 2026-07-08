@@ -11,12 +11,12 @@
 
 <!--  
   ==================================
-  공통 헤더바  
+  공통 헤더바 - 호진
   ==================================
   -->
 <!-- 
   ==================================
-  비회원(구경꾼) 헤더바
+  비회원(구경꾼) 헤더바 -- 호진
   ==================================
   -->
 <!-- <header class="site-header">
@@ -31,7 +31,7 @@
 
 <!-- 
   ==================================
-  회원(시청자이상) 헤더바 
+  회원(시청자이상) 헤더바 -- 호진
   ==================================
   -->
 <header class="site-header">
@@ -49,7 +49,7 @@
 
 <!-- 
   ==================================
-  관리자 헤더바 
+  관리자 헤더바 -- 호진
   ==================================
   -->
 <!-- <header class="site-header">
@@ -69,25 +69,25 @@
 
 <!-- 
   ==================================
-  공통 네비게이션 바 
+  공통 네비게이션 바 -- 호진
   ==================================
   -->
 <nav class="category-nav">
   <div class="container">
     <ul>
       <li><a href="04_list.html?cat=all" data-nav="all">전체</a></li>
-      <li><a href="05_notice.html" data-nav="notice">공지사항 & Q&A</a></li>
       <li><a href="04_list.html?cat=netflix" data-nav="netflix">넷플릭스</a></li>
       <li><a href="04_list.html?cat=tving" data-nav="tving">티빙</a></li>
       <li><a href="04_list.html?cat=disney" data-nav="disney">디즈니플러스</a></li>
       <li><a href="04_list.html?cat=etc" data-nav="etc">기타</a></li>
+      <li style="margin-left:auto"><a href="05_notice.html" data-nav="notice">공지사항 & Q&A</a></li>
     </ul>
   </div>
 </nav>
 
  <!-- 
     ==================================
-    메인 영역 
+    메인 영역 -- 호진
     ==================================
   -->
 <main class="container">
@@ -123,7 +123,7 @@
 
     <!-- 
       ==================================
-      관리자 답변 영역 
+      관리자 답변 영역 -- 호진
       ==================================
       -->
     <div class="qna-answer-box">
@@ -135,7 +135,7 @@
 
     <!-- 
       ==================================  
-      댓글 영역 
+      댓글 영역 -- 호진
       ==================================
       -->
     <section class="qna-comment-section">
@@ -149,7 +149,8 @@
             <div class="qna-comment-body">저도 같은 문제였는데 조금 기다리니까 해결됐어요!</div>
           </div>
         </div>
-        <span class="qna-comment-more">⋮</span>
+        <!-- 댓글 삭제버튼 (본인만 보이게) -->
+        <button class="btn btn-sm">삭제</button>
       </div>
       <div class="qna-comment-item">
         <div class="qna-comment-left">
@@ -159,7 +160,7 @@
             <div class="qna-comment-body">앱 재설치하니까 바로 됐습니다!</div>
           </div>
         </div>
-        <span class="qna-comment-more">⋮</span>
+        <button class="btn btn-sm">삭제</button>
       </div>
       <div class="qna-comment-item">
         <div class="qna-comment-left">
@@ -169,7 +170,7 @@
             <div class="qna-comment-body">공식 공지 기다리는 중이에요 ㅠㅠ</div>
           </div>
         </div>
-        <span class="qna-comment-more">⋮</span>
+        <button class="btn btn-sm">삭제</button>
       </div>
 
       <div id="commentList"></div>
@@ -182,7 +183,7 @@
 
     <!-- 
       ==================================
-      목록으로 버튼 
+      목록으로 버튼 -- 호진
       ==================================
       -->
     <div style="margin-top:20px">
@@ -196,14 +197,14 @@
 
 <!-- 
   ================================
-  오버레이 영역
+  오버레이 영역 -- 호진 
   ================================
   -->
 <div class="overlay-backdrop" id="notificationBackdrop"></div>
 
 <!-- 
   ================================
-  알림 영역
+  알림 영역 -- 호진
   ================================
   -->
 <aside class="slide-panel" id="notificationPanel">
@@ -236,7 +237,7 @@
 
 <!-- 
   ================================
-  챗봇 영역
+  챗봇 영역 -- 호진
   ================================
   -->
 <button class="fab" id="chatbotFab" title="챗봇 실행">🤖</button>
@@ -264,7 +265,7 @@
 
 <!-- 
   ================================
-  채팅방 영역
+  채팅방 영역 -- 호진
   ================================
   -->
 <div class="overlay-backdrop" id="chatroomBackdrop"></div>
