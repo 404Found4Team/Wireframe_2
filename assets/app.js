@@ -238,10 +238,26 @@ function initHeroSlider() {
   startAutoPlay();
 }
 
+// ---- 상단 카테고리 네비게이션: 현재 보고 있는 페이지/카테고리에 맞는 탭만 빨간색으로 강조 ----
+function initCategoryNav() {
+  const nav = document.querySelector(".category-nav");
+  if (!nav) return;
+
+  const isListPage = location.pathname.split("/").pop() === "04_list.html";
+  const current = isListPage
+    ? new URLSearchParams(location.search).get("cat") || "all"
+    : document.body.dataset.navCurrent || "";
+
+  nav.querySelectorAll("a[data-nav]").forEach((a) => {
+    a.classList.toggle("active", a.dataset.nav === current);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   applyRoleVisibility();
   initDropdowns();
   initHeroSlider();
+  initCategoryNav();
 
   initOverlay("chatbotPanel", "chatbotBackdrop", ["chatbotFab"], ["chatbotClose"]);
   initOverlay("chatroomPanel", "chatroomBackdrop", ["chatroomTrigger"], ["chatroomClose"], "chatroom-open");
