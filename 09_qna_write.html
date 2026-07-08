@@ -4,15 +4,23 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>YouFlex - 질문 작성</title>
-<link rel="stylesheet" href="assets/common.css" />
+<link rel="stylesheet" href="assets/css/common.css" />
 <link rel="stylesheet" href="assets/css/09_qna_write.css" />
 </head>
 <body data-nav-current="notice">
 
 
-<!--  공통 헤더바  -->
-<!-- 비회원(구경꾼) 헤더바 -->
-<header class="site-header">
+<!--  
+  ==================================
+  공통 헤더바  
+  ==================================
+  -->
+<!-- 
+  ==================================
+  비회원(구경꾼) 헤더바
+  ==================================
+  -->
+<!-- <header class="site-header">
   <div class="container">
     <a href="01_main.html" class="logo"><img src="assets/img/logo.png" alt="YouFlex" /></a>
     <div class="search-bar"><span class="icon">🔍</span><input type="text" placeholder="콘텐츠, 게시글 통합 검색" /></div>
@@ -20,10 +28,14 @@
       <a href="02_login.html" class="btn btn-ghost">로그인</a>
     </div>
   </div>
-</header>
+</header> -->
 
-<!-- 회원(시청자이상) 헤더바 -->
-<!-- <header class="site-header">
+<!-- 
+  ==================================
+  회원(시청자이상) 헤더바 
+  ==================================
+  -->
+<header class="site-header">
   <div class="container">
     <a href="01_main.html" class="logo"><img src="assets/img/logo.png" alt="YouFlex" /></a>
     <div class="search-bar"><span class="icon">🔍</span><input type="text" placeholder="콘텐츠, 게시글 통합 검색" /></div>
@@ -34,9 +46,13 @@
       <button class="icon-btn" id="chatroomTrigger">💬<span class="badge">3</span></button>
     </div>
   </div>
-</header> -->
+</header>
 
-<!-- 관리자 헤더바 -->
+<!-- 
+  ==================================
+  관리자 헤더바 
+  ==================================
+  -->
 <!-- <header class="site-header">
   <div class="container">
     <a href="01_main.html" class="logo"><img src="assets/img/logo.png" alt="YouFlex" /></a>
@@ -52,7 +68,11 @@
   </div>
 </header> -->
 
-<!-- 공통 네비게이션 바 -->
+<!-- 
+  ==================================
+  공통 네비게이션 바 
+  ==================================
+  -->
 <nav class="category-nav">
   <div class="container">
     <ul>
@@ -66,7 +86,11 @@
   </div>
 </nav>
 
-<!-- 메인 영역 -->
+<!-- 
+  ==================================
+  메인 영역 
+  ==================================
+  -->
 <main class="container">
   <div class="notice-detail-wrap">
     <h1 class="notice-detail-title">질문 작성</h1>
@@ -94,11 +118,44 @@
   </div>
 </main>
 
-<footer class="site-footer"><div class="container">YouFlex 화면 초안 (Wireframe Draft)</div></footer>
+<!-- 
+  ==================================
+  공통 푸터 영역
+  ==================================
+  -->
+<footer class="site-footer main-footer">
+  <div class="container main-footer-inner">
+    <div class="main-footer-brand">
+      <a href="01_main.html" class="logo"><img src="assets/img/logo.png" alt="YouFlex" /></a>
+      <p>당신의 콘텐츠 취향을 연결하는<br />OTT 리뷰 &amp; 커뮤니티 플랫폼</p>
+    </div>
+    <div class="main-footer-info">
+      <p>(주)YouFlex&nbsp;&nbsp;|&nbsp;&nbsp;대표: YouFlex&nbsp;&nbsp;|&nbsp;&nbsp;사업자등록번호: 000-00-00000</p>
+      <p>개인정보관리책임자: YouFlex</p>
+      <p>이메일: youflex@youflex.com&nbsp;&nbsp;|&nbsp;&nbsp;고객센터: 00-000-0000</p>
+    </div>
+    <div class="main-footer-meta">
+      <p>&copy; 2026 YouFlex. All rights reserved.</p>
+    </div>
+    <button class="main-footer-top" id="footerTopBtn" title="맨 위로">↑</button>
+  </div>
+</footer>
 
+<!-- 
+  ================================
+  오버레이 영역
+  ================================
+  -->
 <div class="overlay-backdrop" id="notificationBackdrop"></div>
+
+<!-- 
+  ================================
+  알림 영역
+  ================================
+  -->
 <aside class="slide-panel" id="notificationPanel">
   <div class="panel-header"><h3>🔔 알림</h3><button class="panel-close" id="notificationClose">✕</button></div>
+  <!-- 알림 내용 -->
   <div class="panel-body">
     <div class="notification-item">
       <span class="notification-icon">⚠</span>
@@ -124,26 +181,39 @@
   </div>
 </aside>
 
+<!-- 
+  ================================
+  챗봇 영역
+  ================================
+  -->
 <button class="fab" id="chatbotFab" title="챗봇 실행">🤖</button>
 <div class="overlay-backdrop" id="chatbotBackdrop"></div>
 <aside class="slide-panel" id="chatbotPanel">
   <div class="panel-header"><h3>🤖 YouFlex 챗봇</h3><button class="panel-close" id="chatbotClose">✕</button></div>
   <div class="panel-body">
-    <div class="chat-msg"><div class="avatar"></div><div class="bubble">무엇을 도와드릴까요?</div></div>
-    <div class="quiz-box">
-      <div class="quiz-count">🎯 오늘 남은 퀴즈 횟수: 2/3</div>
-      <button class="btn btn-sm btn-primary" id="quizStartBtn">퀴즈 시작</button>
-      <div class="quiz-options" id="quizOptions" style="display:none">
-        <button data-correct="false">디즈니플러스</button>
-        <button data-correct="true">넷플릭스</button>
-        <button data-correct="false">티빙</button>
-        <button data-correct="false">웨이브</button>
+    <div class="chat-msg"><div class="avatar"></div><div class="bubble">무엇을 도와드릴까요? 객관식 1문제 + OX 1문제, 하루 3번까지 풀 수 있어요!</div></div>
+    <div class="quiz-box" id="qnaQuizBox">
+      <div class="quiz-count" id="qnaQuizCount">🎯 오늘 남은 퀴즈 횟수: 3/3</div>
+      <button class="btn btn-sm btn-primary" id="qnaQuizStartBtn">퀴즈 시작</button>
+
+      <div id="qnaQuizPlay" style="display:none">
+        <div class="quiz-progress" id="qnaQuizProgress"></div>
+        <div class="quiz-question" id="qnaQuizQuestion"></div>
+        <div class="quiz-options" id="qnaQuizOptions"></div>
+        <button class="btn btn-sm btn-primary" id="qnaQuizNextBtn" style="display:none">다음 문제 ›</button>
       </div>
+
+      <div class="quiz-result" id="qnaQuizResult" style="display:none"></div>
     </div>
   </div>
   <div class="panel-input-row"><input type="text" placeholder="질문을 입력하세요" /><button class="btn btn-primary">전송</button></div>
 </aside>
 
+<!-- 
+  ================================
+  채팅방 영역
+  ================================
+  -->
 <div class="overlay-backdrop" id="chatroomBackdrop"></div>
 <aside class="slide-panel" id="chatroomPanel">
   <div class="panel-header"><h3>💬 커뮤니티 채팅</h3><button class="panel-close" id="chatroomClose">✕</button></div>
@@ -174,12 +244,12 @@
     <label class="text-muted" style="font-size:13px">방 이름</label>
     <input type="text" id="chatroom_title" name="chatroom_title" style="background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:10px;color:#fff" />
     <label class="text-muted" style="font-size:13px">최대 인원</label>
-    <input type="number" id="chatroom_max_member" name="chatroom_max_member" min="2" max="100" value="30" style="background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:10px;color:#fff" />
+    <input type="number" id="chatroom_max_member" name="chatroom_max_member" min="2" max="30" value="10" style="background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:10px;color:#fff" />
     <button class="btn btn-primary mt-24" id="chatroomCreateBtn">채팅방 개설</button>
   </div>
 </aside>
 
-<script src="assets/app.js"></script>
+<script src="assets/js/app.js"></script>
 <script src="assets/js/09_qna_write.js"></script>
 </body>
 </html>
