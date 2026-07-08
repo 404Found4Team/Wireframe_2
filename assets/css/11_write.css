@@ -7,6 +7,10 @@
 .write-wrap { max-width: none; margin: 0; } /* common.css .notice-detail-wrap류와 달리 폭 제한 없이 그리드 칸을 꽉 채움 */
 .write-wrap h1 { font-size:22px; margin-bottom:20px; }
 
+/* 대표 이미지 영역 */
+
+
+
 /* ---------- 오른쪽 "임시저장 목록" 사이드바 ---------- */
 .draft-sidebar { background:var(--bg-1); border:1px solid var(--border); border-radius:var(--radius); padding:20px; position:sticky; top:20px; } /* 스크롤해도 화면에 붙어있게 sticky */
 .draft-sidebar h3 { font-size:15px; margin:0 0 14px; }
