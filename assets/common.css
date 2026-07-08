@@ -564,3 +564,33 @@ body.chatroom-open #chatbotPanel.slide-panel { right: 408px; }
 .dev-pagebar a { color: #888; }
 .dev-pagebar a.current { color: var(--accent); font-weight: 700; } /* 지금 보고 있는 화면의 링크만 강조 표시 */
 .dev-pagebar a:hover { color: #fff; }
+
+/* ---------- 공통 푸터 (로고+소개 / 사업자정보 / 저작권+약관링크 / 맨위로) ---------- */
+.main-footer { text-align: left; padding: 40px 0; }
+.main-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+.main-footer-brand { flex-shrink: 0; }
+.main-footer-brand .logo img { height: 28px; }
+.main-footer-brand p { margin: 12px 0 0; font-size: 13px; line-height: 1.6; color: var(--text-2); }
+.main-footer-info { font-size: 13px; line-height: 2; color: var(--text-2); }
+.main-footer-meta { flex-shrink: 0; text-align: right; font-size: 13px; line-height: 2; color: var(--text-2); }
+.main-footer-links a { color: var(--text-2); }
+.main-footer-links a:hover { color: var(--text-1); }
+.main-footer-top {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg-2);
+  color: var(--text-1);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-footer-top:hover { background: var(--bg-3); }
