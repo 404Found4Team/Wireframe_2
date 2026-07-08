@@ -18,7 +18,7 @@ function setDemoRole(role) {
 }
 
 // ---- 오버레이 패널 (챗봇 / 채팅방) ----
-function initOverlay(panelId, backdropId, openTriggerIds, closeTriggerIds, bodyClass) {
+function initOverlay(panelId, backdropId, openTriggerIds, closeTriggerIds, bodyClass, toggleOnTrigger) {
   const panel = document.getElementById(panelId);
   const backdrop = document.getElementById(backdropId);
   if (!panel) return;
@@ -36,7 +36,11 @@ function initOverlay(panelId, backdropId, openTriggerIds, closeTriggerIds, bodyC
 
   openTriggerIds.forEach((id) => {
     const el = document.getElementById(id);
-    if (el) el.addEventListener("click", open);
+    if (!el) return;
+    el.addEventListener("click", () => {
+      if (toggleOnTrigger && panel.classList.contains("open")) close();
+      else open();
+    });
   });
   closeTriggerIds.forEach((id) => {
     const el = document.getElementById(id);
@@ -260,7 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeroSlider();
   initCategoryNav();
 
-  initOverlay("chatbotPanel", "chatbotBackdrop", ["chatbotFab"], ["chatbotClose"]);
+  initOverlay("chatbotPanel", "chatbotBackdrop", ["chatbotFab"], ["chatbotClose"], null, true);
   initOverlay("chatroomPanel", "chatroomBackdrop", ["chatroomTrigger"], ["chatroomClose"], "chatroom-open");
   initOverlay("notificationPanel", "notificationBackdrop", ["notificationTrigger"], ["notificationClose"], "notification-open");
 
