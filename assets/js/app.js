@@ -203,8 +203,8 @@ function initHeroSlider() {
   const dots = document.querySelectorAll(".hero-dots span");
   if (!slider || !slides.length) return;
 
-// 배너 5초 마다 자동으로 바뀜
-  const AUTO_PLAY_MS = 5000;
+// 배너 3초 마다 자동으로 바뀜 -나영-
+  const AUTO_PLAY_MS = 3000;
   let index = 0;
   let timerId = null;
 console.log(slides.length);

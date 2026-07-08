@@ -9,8 +9,7 @@
 </head>
 <body>
 
-
-
+<!-- 헤더영역 -->
 <header class="site-header">
   <div class="container">
     <a href="01_main.html" class="logo"><img src="assets/img/logo.png" alt="YouFlex" /></a>
@@ -24,7 +23,7 @@
     </div>
   </div>
 </header>
-
+<!-- 마이페이지 프로필 영역 -->
 <main class="container" style="max-width:900px">
   <div class="card profile-summary mt-24">
     <div class="avatar-lg" id="profileImageTrigger">
@@ -43,7 +42,7 @@
       </div>
     </div>
   </div>
-
+  <!-- 마이페이지 탭 전환 영역 -->
   <div class="mypage-tabs" data-tab-panels>
     <button class="active" data-tab-target="profile">내 정보 수정</button>
     <button data-tab-target="posts">내 글</button>
@@ -90,17 +89,25 @@
   <div data-tab-panel="posts" class="mt-24" style="display:none">
     <div class="post-row-list">
       <a class="post-row" href="13_detail.html">
-        <div class="post-row-thumb"></div>
+        <div class="post-row-thumb">
+          <!-- 내글 썸네일 추가 -나영- -->
+          <img src="./assets/img/wave/deepwater_horizon.png" class="post-img">
+        </div>
         <div>
           <div class="post-row-title">「오징어게임 3」, 이대로 끝내도 되는가</div>
+          
           <div class="post-row-sub">드라마 · ★ 4.5</div>
         </div>
         <div class="post-row-right">2026-06-30<br/>조회 15.2k</div>
       </a>
       <a class="post-row" href="13_detail.html">
-        <div class="post-row-thumb"></div>
+        <div class="post-row-thumb">
+          <!-- 내글 썸네일 추가 -나영- -->
+          <img src="./assets/img/wave/deepwater_horizon.png" class="post-img">
+        </div>
         <div>
           <div class="post-row-title">영화 「파묘」 오컬트 요소 완전분석</div>
+          
           <div class="post-row-sub">영화 · ★ 4.4</div>
         </div>
         <div class="post-row-right">2026-06-26<br/>조회 5.1k</div>
@@ -112,14 +119,26 @@
   <div data-tab-panel="bookmark" class="mt-24" style="display:none">
     <div class="post-grid">
       <a class="post-card" href="13_detail.html">
-        <div class="post-thumb">썸네일</div>
+        <!-- 북마크 썸네일 추가 -나영-  -->
+        <div class="post-thumb"><img src="./assets/img/disney+/lionking.png" class="bookmark-img"></div>
         <div class="post-card-body">
           <div class="post-card-title">「무빙」 최종화, 그 후 이야기</div>
           <div class="post-card-meta"><span>드라마러버</span><span>3일 전</span></div>
         </div>
       </a>
       <a class="post-card" href="13_detail.html">
-        <div class="post-thumb">썸네일</div>
+         <!-- 북마크 썸네일 추가 -나영-  -->
+        <div class="post-thumb"><img src="./assets/img/tving/blacklight.png" class="bookmark-img"></div>
+        <div class="post-card-body">
+          <div class="post-card-title">애니 「던전밥」 원작 팬의 시청 후기</div>
+          <div class="post-card-meta"><span>애니덕후</span><span>1주 전</span></div>
+        </div>
+      </a>
+       <a class="post-card" href="13_detail.html">
+        <div class="post-thumb">
+           <!-- 북마크 썸네일 추가 -나영-  -->
+          <img src="./assets/img/tving/now_you_see_me.png" class="bookmark-img">
+        </div>
         <div class="post-card-body">
           <div class="post-card-title">애니 「던전밥」 원작 팬의 시청 후기</div>
           <div class="post-card-meta"><span>애니덕후</span><span>1주 전</span></div>
@@ -219,7 +238,7 @@
 </div>
 
 <footer class="site-footer"><div class="container">YouFlex 화면 초안 (Wireframe Draft)</div></footer>
-
+<!-- 알림 메세지 영역 -->
 <div class="overlay-backdrop" id="notificationBackdrop"></div>
 <aside class="slide-panel" id="notificationPanel">
   <div class="panel-header"><h3>🔔 알림</h3><button class="panel-close" id="notificationClose">✕</button></div>
@@ -248,7 +267,7 @@
     </div>
   </div>
 </aside>
-
+<!-- 챗봇 영역 -->
 <button class="fab" id="chatbotFab" title="챗봇 실행">🤖</button>
 <div class="overlay-backdrop" id="chatbotBackdrop"></div>
 <aside class="slide-panel" id="chatbotPanel">
@@ -269,7 +288,7 @@
   <div class="panel-input-row"><input type="text" placeholder="질문을 입력하세요" />
     <button class="btn btn-primary">전송</button></div>
 </aside>
-
+<!-- 커뮤니티 채팅 영역 -->
 <div class="overlay-backdrop" id="chatroomBackdrop"></div>
 <aside class="slide-panel" id="chatroomPanel">
   <div class="panel-header"><h3>💬 커뮤니티 채팅</h3><button class="panel-close" id="chatroomClose">✕</button></div>
