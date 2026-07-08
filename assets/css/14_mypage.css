@@ -44,3 +44,8 @@
   width: 100px;
   height: 100%;
 }
+/* 북마크 썸네일 추가 -나영- */
+.bookmark-img{
+  width: 268px;
+  height: 350px;
+}
