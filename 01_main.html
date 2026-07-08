@@ -42,11 +42,14 @@
   </div>
 </nav>
 
-<!-- 메인 영역 container -->
+<!-- 메인 배너 영역  -->
 <main class="container">
+  <!-- 최신화제작 글 추가 -나영- -->
+  <h2>최신화제작</h2>
   <section class="hero-slider">
     <button class="hero-arrow prev" id="heroPrev">‹</button>
     <button class="hero-arrow next" id="heroNext">›</button>
+    
     <div class="hero-slide-content active">
       <img src="./assets/img/netflix/american_sniper.png" class="hero-banner-img">
       <span class="hero-badge">NETFLIX 시리즈</span>
@@ -76,12 +79,14 @@
     <a href="04_list.html" class="more">더보기 ›</a>
   </div>
   <div class="platform-tabs" data-tab-panels>
-    <button class="active" data-tab-target="netflix">넷플릭스</button>
+    <button class="active" data-tab-target="all">전체</button>
+      <button data-tab-target="netflix">넷플릭스</button>
     <button data-tab-target="tving">티빙</button>
     <button data-tab-target="disney">디즈니플러스</button>
     <button data-tab-target="etc">기타</button>
   </div>
-  <div class="rank-grid" data-tab-panel="netflix">
+  <!-- 전체 -->
+   <div class="rank-grid" data-tab-panel="all">
     <a class="rank-card" href="13_detail.html">
       <div class="rank-thumb"><img src="./assets/img/wave/battleship.png" class="list-img"></div>
       <span class="rank-number">1</span>
@@ -118,6 +123,46 @@
       <div class="rank-meta">좀비덕후 · ❤ 480</div></div>
     </a>
   </div>
+
+  <!-- 넷플릭스 -->
+  <div class="rank-grid" data-tab-panel="netflix" style="display:none">
+    <a class="rank-card" href="13_detail.html">
+      <div class="rank-thumb"><img src="./assets/img/wave/battleship.png" class="list-img"></div>
+      <span class="rank-number">1</span>
+      <span class="rank-rating">★ 4.8</span>
+      <div class="rank-body"><div class="rank-title">「오징어게임 3」, 이대로 끝내도 되는가</div>
+      <div class="rank-meta">리뷰왕 · ❤ 1,204</div></div>
+    </a>
+    <a class="rank-card" href="13_detail.html">
+      <div class="rank-thumb"><img src="./assets/img/wave/battleship.png" class="list-img"></div>
+      <span class="rank-number">2</span>
+      <span class="rank-rating">★ 4.7</span>
+      <div class="rank-body"><div class="rank-title">「더 글로리」 재감상 후기 - 복수극의 정석</div>
+      <div class="rank-meta">김리뷰 · ❤ 892</div></div>
+    </a>
+    <a class="rank-card" href="13_detail.html">
+      <div class="rank-thumb"><img src="./assets/img/wave/battleship.png" class="list-img"></div>
+      <span class="rank-number">3</span>
+      <span class="rank-rating">★ 4.6</span>
+      <div class="rank-body"><div class="rank-title">「살인자ㅇ난감」 결말 완전분석</div>
+      <div class="rank-meta">스릴러광 · ❤ 754</div></div>
+    </a>
+    <a class="rank-card" href="13_detail.html">
+      <div class="rank-thumb"><img src="./assets/img/wave/battleship.png" class="list-img"></div>
+      <span class="rank-number">4</span>
+      <span class="rank-rating">★ 4.5</span>
+      <div class="rank-body"><div class="rank-title">「기생수: 더 그레이」 원작과 비교 리뷰</div>
+      <div class="rank-meta">무비홀릭 · ❤ 610</div></div>
+    </a>
+    <a class="rank-card" href="13_detail.html">
+      <div class="rank-thumb"><img src="./assets/img/wave/battleship.png" class="list-img"></div>
+      <span class="rank-number">5</span>
+      <span class="rank-rating">★ 4.3</span>
+      <div class="rank-body"><div class="rank-title">「지금 우리 학교는」 시즌2 기대평</div>
+      <div class="rank-meta">좀비덕후 · ❤ 480</div></div>
+    </a>
+  </div>
+  <!-- 티빙 -->
   <div class="rank-grid" data-tab-panel="tving" style="display:none">
     <a class="rank-card" href="13_detail.html">
       <div class="rank-thumb"><img src="./assets/img/netflix/kpop_demon_hunters.png" class="list-img"></div>
@@ -155,6 +200,7 @@
       <div class="rank-meta">예능덕후 · ❤ 305</div></div>
     </a>
   </div>
+  <!-- 디즈니 플러스 -->
   <div class="rank-grid" data-tab-panel="disney" style="display:none">
     <a class="rank-card" href="13_detail.html">
       <div class="rank-thumb"><img src="./assets/img/wave/battleship.png" class="list-img"></div>
@@ -192,6 +238,7 @@
       <div class="rank-meta">미스터리광 · ❤ 290</div></div>
     </a>
   </div>
+  <!-- 기타 -->
   <div class="rank-grid" data-tab-panel="etc" style="display:none">
     <a class="rank-card" href="13_detail.html">
       <div class="rank-thumb"><img src="./assets/img/wave/bumblebee.png" class="list-img"></div>
