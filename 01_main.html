@@ -48,19 +48,23 @@
     <button class="hero-arrow prev" id="heroPrev">‹</button>
     <button class="hero-arrow next" id="heroNext">›</button>
     <div class="hero-slide-content active">
-       <img src="./assets/img/kill.jpg.png" class="hero-banner-img">  
+      <img src="./assets/img/netflix/american_sniper.png" class="hero-banner-img">  
       <span class="hero-badge">NETFLIX 시리즈</span>
       <h1>살인자ㅇ난감</h1>
       <p>우발적 살인에서 시작된 예측 불가 추적 스릴러</p>
     </div>
     <div class="hero-slide-content">
+<<<<<<< HEAD
       <img src="./assets/img/disney+/avatar.jpg" class="hero-banner-img">
+=======
+      <img src="./assets/img/disney+/mandalorian.png" class="hero-banner-img">
+>>>>>>> master
       <span class="hero-badge">DISNEY+ 시리즈</span>
       <h1>아바타: 물의 길</h1>
       <p>판도라 행성에서 펼쳐지는 또 다른 대서사시</p>
     </div>
     <div class="hero-slide-content">
-      <img src="./assets/img/transfer3.jpg.png" class="hero-banner-img">
+      <img src="./assets/img/tving/volcano.png" class="hero-banner-img">
       <span class="hero-badge">TVING 오리지널</span>
       <h1>환승연애3</h1>
       <p>다시 만난 인연, 새로운 설렘의 시작</p>
@@ -260,8 +264,29 @@
   </div>
 </main>
 
+<<<<<<< HEAD
 <footer class="site-footer"><div class="container">YouFlex 화면 초안 (Wireframe Draft)</div></footer>
 <!-- 알림 메세지 -->
+=======
+<footer class="site-footer main-footer">
+  <div class="container main-footer-inner">
+    <div class="main-footer-brand">
+      <a href="01_main.html" class="logo"><img src="assets/img/logo.png" alt="YouFlex" /></a>
+      <p>당신의 콘텐츠 취향을 연결하는<br />OTT 리뷰 &amp; 커뮤니티 플랫폼</p>
+    </div>
+    <div class="main-footer-info">
+      <p>(주)YouFlex&nbsp;&nbsp;|&nbsp;&nbsp;대표: YouFlex&nbsp;&nbsp;|&nbsp;&nbsp;사업자등록번호: 000-00-00000</p>
+      <p>개인정보관리책임자: YouFlex</p>
+      <p>이메일: youflex@youflex.com&nbsp;&nbsp;|&nbsp;&nbsp;고객센터: 00-000-0000</p>
+    </div>
+    <div class="main-footer-meta">
+      <p>&copy; 2026 YouFlex. All rights reserved.</p>
+    </div>
+    <button class="main-footer-top" id="footerTopBtn" title="맨 위로">↑</button>
+  </div>
+</footer>
+
+>>>>>>> master
 <div class="overlay-backdrop" id="notificationBackdrop"></div>
 <aside class="slide-panel" id="notificationPanel">
   <div class="panel-header"><h3>🔔 알림</h3><button class="panel-close" id="notificationClose">✕</button></div>
@@ -354,5 +379,10 @@
 </aside>
 
 <script src="assets/app.js"></script>
+<script>
+  document.getElementById('footerTopBtn').addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
 </body>
 </html>
