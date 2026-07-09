@@ -5,7 +5,25 @@
 
 .write-page-grid { display:grid; grid-template-columns:1fr 280px; gap:24px; align-items:start; max-width:1060px; margin:32px auto; } /* 왼쪽 작성폼 | 오른쪽 임시저장 사이드바 */
 .write-wrap { max-width: none; margin: 0; } /* common.css .notice-detail-wrap류와 달리 폭 제한 없이 그리드 칸을 꽉 채움 */
-.write-wrap h1 { font-size:22px; margin-bottom:20px; }
+/* '장르'버튼 넣을 박스 추가(웅조) */
+.review-genre-box{
+  display: flex;
+}
+/* "♡ 취향 선택" 알약 버튼 수정(웅조)*/
+.review-genre-box{
+  align-items: center;
+  justify-content: center;
+}
+.review-genre-box >button{
+  align-items: center;
+  justify-content: center;
+}
+.taste-btn {
+  display:inline-flex; align-items:center; gap:6px; background:var(--bg-3); border:1px solid var(--border);
+  border-radius:999px; padding:5px 14px; font-size:12px; font-weight:600; color:var(--text-1);
+  margin-left:auto; width: 120px; height: 40px;
+}
+.taste-btn:hover { border-color:var(--accent); color:var(--accent); }
 
 /* 대표 이미지 영역 수정 완료 */
 .upload-box {
@@ -49,7 +67,7 @@
 }
 
 /* ── 별점 ── */
-.stars { color: #f39c12; font-size: 1.1rem; letter-spacing: 2px; }
+/* .stars { color: #f39c12; font-size: 1.1rem; letter-spacing: 2px; }
 .stars-sm { color: #f39c12; font-size: 0.9rem; }
 .rating-input { display: flex; gap: 6px; }
 .rating-input span {
@@ -58,7 +76,49 @@
     color: #ddd;
     transition: color 0.1s;
 }
-.rating-input span.active { color: #f39c12; }
+.rating-input span.active { color: #f39c12; } */
+.rating-input {
+  display: flex;
+  gap: 2px;
+}
+
+/* 별 하나를 감싸는 상자 */
+.star-box {
+  position: relative;
+  font-size: 2rem;
+  width: 2rem;
+  height: 2rem;
+  color: #444; /* 기본 빈 별 색상 */
+  cursor: pointer;
+  line-height: 1; /* 1 또는 1.2, normal 등으로 조절 */
+}
+
+/* 반 쪼개지는 별들의 공통 스타일 */
+.star-box .half {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: auto; /* 마우스 이벤트 감지 */
+}
+
+/* 왼쪽 반 칸 설정 */
+.star-box .half.left {
+  width: 50%;
+  z-index: 2;
+}
+
+/* 오른쪽 반 칸 설정 (글자가 전체 다 보이지만 left 영역 뒤로 숨음) */
+.star-box .half.right {
+  z-index: 1;
+}
+
+/* 활성화(노란색) 상태 스타일 */
+.star-box .half.active {
+  color: #f39c12;
+}
 
 /* 대표이미지 수정(웅조) */
 .wrap-representative-img > input{
