@@ -5,6 +5,16 @@
 
 .write-page-grid { display:grid; grid-template-columns:1fr 280px; gap:24px; align-items:start; max-width:1060px; margin:32px auto; } /* 왼쪽 작성폼 | 오른쪽 임시저장 사이드바 */
 .write-wrap { max-width: none; margin: 0; } /* common.css .notice-detail-wrap류와 달리 폭 제한 없이 그리드 칸을 꽉 채움 */
+/* '장르'버튼 넣을 박스 추가(웅조) */
+.review-genre-box{
+  display: flex;
+}
+/* "♡ 취향 선택" 알약 버튼 */
+.taste-btn {
+  display:inline-flex; align-items:center; gap:6px; background:var(--bg-3); border:1px solid var(--border);
+  border-radius:999px; padding:5px 14px; font-size:12px; font-weight:600; color:var(--text-1);
+}
+.taste-btn:hover { border-color:var(--accent); color:var(--accent); }
 .write-wrap h1 { font-size:22px; margin-bottom:20px; }
 
 /* 대표 이미지 영역 수정 완료 */
