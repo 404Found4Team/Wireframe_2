@@ -184,3 +184,11 @@
   from { opacity: 0; transform: translateY(8px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+/* ---------- "인기 리뷰글" 제목 보라색 꾸미기 -나영- ---------- */
+.section-heading--purple {
+  background: linear-gradient(90deg, #ffd47a 0%, #ff6b8b 60%, #c86dd7 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
