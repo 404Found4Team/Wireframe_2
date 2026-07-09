@@ -33,59 +33,37 @@
   <div class="container">
     <ul>
       <li><a href="04_list.html?cat=all" data-nav="all">전체</a></li>
-      <li><a href="05_notice.html" data-nav="notice">공지사항 & Q&A</a></li>
       <li><a href="04_list.html?cat=netflix" data-nav="netflix">넷플릭스</a></li>
       <li><a href="04_list.html?cat=tving" data-nav="tving">티빙</a></li>
       <li><a href="04_list.html?cat=disney" data-nav="disney">디즈니플러스</a></li>
       <li><a href="04_list.html?cat=etc" data-nav="etc">기타</a></li>
+      <li style="margin-left:auto"><a href="05_notice.html" data-nav="notice">공지사항</a></li>
+      <li><a href="05_notice.html#qna" data-nav="qna">Q&A</a></li>
     </ul>
   </div>
 </nav>
 
+<!-- 
+  ================================
+  메인 영역
+  ================================
+-->
 <main class="container">
   <div class="list-toolbar">
-    <div class="flex gap-8" style="flex:1; max-width:520px;">
-      <div class="search-bar" style="margin:0;">
-        <span class="icon">🔍</span>
-        <input type="text" placeholder="제목, 작성자로 검색" />
-      </div>
-      <div class="adv-search-toggle">
-        <button class="btn" id="advToggleBtn">상세검색 ▾</button>
-        <div class="adv-search-panel" id="advPanel">
-          <label>기간</label>
-          <select>
-            <option>전체</option>
-            <option>최근 1주일</option>
-            <option>최근 1개월</option>
-            <option>최근 3개월</option>
-          </select>
-          <label>플랫폼</label>
-          <select>
-            <option>전체</option>
-            <option>넷플릭스</option>
-            <option>티빙</option>
-            <option>디즈니플러스</option>
-            <option>기타</option>
-          </select>
-          <button class="btn btn-primary btn-block mt-16">검색 적용</button>
-        </div>
-      </div>
-    </div>
-
     <div class="sort-group">
       <button class="active">최신순</button>
       <button>좋아요순</button>
       <button>별점순</button>
       <button>조회수순</button>
     </div>
-  </div>
 
-  <div class="write-btn-wrap" data-role-visible="user,critic,admin">
-    <a href="11_write.html" class="btn btn-primary">✎ 글쓰기</a>
-  </div>
-  <!-- 비로그인 시: 버튼 숨김 또는 클릭 시 로그인 유도 -->
-  <div class="write-btn-wrap" data-role-visible="guest">
-    <button class="btn" onclick="if(confirm('로그인이 필요한 기능입니다. 로그인 페이지로 이동할까요?')) location.href='02_login.html'">✎ 글쓰기</button>
+    <div class="write-btn-wrap" data-role-visible="user,critic,admin" style="margin-top:0">
+      <a href="11_write.html" class="btn btn-primary">✎ 글쓰기</a>
+    </div>
+    <!-- 비로그인 시: 버튼 숨김 또는 클릭 시 로그인 유도 -->
+    <div class="write-btn-wrap" data-role-visible="guest" style="margin-top:0">
+      <button class="btn" onclick="if(confirm('로그인이 필요한 기능입니다. 로그인 페이지로 이동할까요?')) location.href='02_login.html'">✎ 글쓰기</button>
+    </div>
   </div>
 
   <div class="post-row-list mt-16">
@@ -165,6 +143,36 @@
         <div class="post-card-meta"><span>느와르팬</span><span>2026-06-26</span></div>
       </div>
     </a>
+  </div>
+
+  <div class="list-toolbar" style="justify-content:center">
+    <div class="flex gap-8" style="max-width:450px;">
+      <div class="search-bar" style="margin:0;max-width:none;padding:12px 20px;">
+        <span class="icon">🔍</span>
+        <input type="text" placeholder="제목, 작성자로 검색" style="font-size:15px" />
+      </div>
+      <div class="adv-search-toggle">
+        <button class="btn" id="advToggleBtn">상세검색 ▾</button>
+        <div class="adv-search-panel" id="advPanel">
+          <label>기간</label>
+          <select>
+            <option>전체</option>
+            <option>최근 1주일</option>
+            <option>최근 1개월</option>
+            <option>최근 3개월</option>
+          </select>
+          <label>플랫폼</label>
+          <select>
+            <option>전체</option>
+            <option>넷플릭스</option>
+            <option>티빙</option>
+            <option>디즈니플러스</option>
+            <option>기타</option>
+          </select>
+          <button class="btn btn-primary btn-block mt-16">검색 적용</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="pagination">

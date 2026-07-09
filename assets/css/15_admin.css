@@ -47,8 +47,19 @@
 
 .btn-row { justify-content:flex-end; } /* 관리자 모달들은 취소/확인 버튼을 오른쪽으로 몰아서 배치 (common.css 기본은 flex:1로 꽉 채움) */
 
-/* ---------- 배너 설정 표: 순서/이미지 칸 너비 고정 + 버튼 칸 왼쪽 정렬 ---------- */
-#bannerTable td.actions { justify-content:flex-start; white-space:nowrap; }
+/* ---------- 배너 설정 표: 순서/이미지 칸 너비 고정 + 버튼 칸 왼쪽 정렬 ----------
+   .table td.actions 의 display:flex 를 그대로 쓰면 그 칸만 표(table) 레이아웃에서
+   빠져나가 버려서, 이미지/설명 칸보다 셀 높이가 낮아지고 밑줄(border-bottom)이
+   행 전체 높이가 아니라 버튼 높이에 맞춰 짧게/삐뚤게 그려짐 -> table-cell로 되돌리고
+   버튼 간격은 flex gap 대신 margin으로 줌 */
+#bannerTable td.actions {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+  white-space: nowrap;
+}
+#bannerTable td.actions button { margin-right: 6px; }
+#bannerTable td.actions button:last-child { margin-right: 0; }
 #bannerTable th:nth-child(1), #bannerTable td:nth-child(1) { width:50px; } /* "순서" 칸 */
 #bannerTable th:nth-child(2), #bannerTable td:nth-child(2) { width:76px; } /* "이미지" 칸 */
 .banner-thumb { width:60px; height:34px; border-radius:4px; background:linear-gradient(150deg,var(--bg-3),var(--bg-2)); overflow:hidden; }

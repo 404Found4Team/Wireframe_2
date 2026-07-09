@@ -9,40 +9,88 @@
 </head>
 <body>
 
-<!-- 헤더 영역 -->
+<!--  
+  ==================================
+  공통 헤더바  
+  ==================================
+  -->
+<!-- 
+  ==================================
+  비회원(구경꾼) 헤더바
+  ==================================
+  -->
+<!-- <header class="site-header">
+  <div class="container">
+    <a href="01_main.html" class="logo"><img src="assets/img/logo.png" alt="YouFlex" /></a>
+    <div class="search-bar"><span class="icon">🔍</span><input type="text" placeholder="콘텐츠, 게시글 통합 검색" /></div>
+    <div class="header-actions">
+      <a href="02_login.html" class="btn btn-ghost">로그인</a>
+    </div>
+  </div>
+</header> -->
+
+<!-- 
+  ==================================
+  회원(시청자이상) 헤더바 
+  ==================================
+  -->
 <header class="site-header">
   <div class="container">
     <a href="01_main.html" class="logo"><img src="assets/img/logo.png" alt="YouFlex" /></a>
-    <div class="search-bar"><span class="icon">🔍</span><input type="text" 
-      placeholder="콘텐츠, 게시글 통합 검색" /></div>
+    <div class="search-bar"><span class="icon">🔍</span><input type="text" placeholder="콘텐츠, 게시글 통합 검색" /></div>
     <div class="header-actions">
-      <a href="02_login.html" class="btn btn-ghost" data-role-visible="guest">로그인</a>
-      <a href="15_admin.html" class="btn btn-ghost" style="color:var(--danger)" data-role-visible="admin">
-        ⚙ 관리자 페이지</a>
-      <a href="14_mypage.html" class="btn btn-ghost" data-role-visible="user,critic,admin">마이페이지</a>
-      <a href="#" class="btn btn-ghost" data-role-visible="user,critic,admin">로그아웃</a>
-      <button class="icon-btn" id="notificationTrigger" data-role-visible="user,critic,admin">
-        🔔<span class="badge">3</span></button>
-      <button class="icon-btn" id="chatroomTrigger" data-role-visible="user,critic,admin">
-        💬<span class="badge">3</span></button>
+      <a href="14_mypage.html" class="btn btn-ghost">마이페이지</a>
+      <a href="#" class="btn btn-ghost">로그아웃</a>
+      <button class="icon-btn" id="notificationTrigger">🔔<span class="badge">3</span></button>
+      <button class="icon-btn" id="chatroomTrigger">💬<span class="badge">3</span></button>
     </div>
   </div>
 </header>
-<!-- 네비게이션 바 영역 -->
+
+<!-- 
+  ==================================
+  관리자 헤더바 
+  ==================================
+  -->
+<!-- <header class="site-header">
+  <div class="container">
+    <a href="01_main.html" class="logo"><img src="assets/img/logo.png" alt="YouFlex" /></a>
+    <div class="search-bar"><span class="icon">🔍</span><input type="text" placeholder="콘텐츠, 게시글 통합 검색" /></div>
+    <div class="header-actions">
+      <a href="02_login.html" class="btn btn-ghost">로그인</a>
+      <a href="15_admin.html" class="btn btn-ghost" style="color:var(--danger)">⚙ 관리자 페이지</a>
+      <a href="14_mypage.html" class="btn btn-ghost">마이페이지</a>
+      <a href="#" class="btn btn-ghost">로그아웃</a>
+      <button class="icon-btn" id="notificationTrigger">🔔<span class="badge">3</span></button>
+      <button class="icon-btn" id="chatroomTrigger">💬<span class="badge">3</span></button>
+    </div>
+  </div>
+</header> -->
+
+<!-- 
+  ==================================
+  공통 네비게이션 바
+  ==================================
+  -->
 <nav class="category-nav">
   <div class="container">
     <ul>
       <li><a href="04_list.html?cat=all" data-nav="all">전체</a></li>
-      <li><a href="05_notice.html" data-nav="notice">공지사항 & Q&A</a></li>
       <li><a href="04_list.html?cat=netflix" data-nav="netflix">넷플릭스</a></li>
       <li><a href="04_list.html?cat=tving" data-nav="tving">티빙</a></li>
       <li><a href="04_list.html?cat=disney" data-nav="disney">디즈니플러스</a></li>
       <li><a href="04_list.html?cat=etc" data-nav="etc">기타</a></li>
+      <li style="margin-left:auto"><a href="05_notice.html" data-nav="notice">공지사항</a></li>
+      <li><a href="05_notice.html#qna" data-nav="qna">Q&A</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- 메인 배너 영역  -->
+<!-- 
+  ==================================
+  메인 배너 영역  
+  ==================================
+  -->
 <main class="container">
   <!-- 최신화제작 글 추가 -나영- -->
   <h2>최신화제작</h2>
@@ -73,7 +121,12 @@
       <span></span>
     </div>
   </section>
-  <!-- 베스트리뷰글 영역 -->
+  
+  <!-- 
+    ==================================
+    베스트리뷰글 영역 
+    ==================================
+    -->
   <div class="section-title mt-40">
     <h2>인기 리뷰글</h2>
     <a href="04_list.html" class="more">더보기 ›</a>
@@ -85,7 +138,11 @@
     <button data-tab-target="disney">디즈니플러스</button>
     <button data-tab-target="etc">기타</button>
   </div>
-  <!-- 전체 -->
+  <!--
+    ==================================
+    전체 
+    ==================================
+    -->
    <div class="rank-grid" data-tab-panel="all">
     <a class="rank-card" href="13_detail.html">
       <div class="rank-thumb"><img src="./assets/img/wave/battleship.png" class="list-img"></div>
@@ -124,7 +181,11 @@
     </a>
   </div>
 
-  <!-- 넷플릭스 -->
+  <!-- 
+    ==================================
+    넷플릭스 
+    ==================================
+    -->
   <div class="rank-grid" data-tab-panel="netflix" style="display:none">
     <a class="rank-card" href="13_detail.html">
       <div class="rank-thumb"><img src="./assets/img/wave/battleship.png" class="list-img"></div>
@@ -162,7 +223,12 @@
       <div class="rank-meta">좀비덕후 · ❤ 480</div></div>
     </a>
   </div>
-  <!-- 티빙 -->
+
+  <!-- 
+    ==================================
+    티빙 
+    ==================================
+    -->
   <div class="rank-grid" data-tab-panel="tving" style="display:none">
     <a class="rank-card" href="13_detail.html">
       <div class="rank-thumb"><img src="./assets/img/netflix/kpop_demon_hunters.png" class="list-img"></div>
@@ -200,7 +266,11 @@
       <div class="rank-meta">예능덕후 · ❤ 305</div></div>
     </a>
   </div>
-  <!-- 디즈니 플러스 -->
+  <!-- 
+    ==================================
+    디즈니 플러스 
+    ==================================
+    -->
   <div class="rank-grid" data-tab-panel="disney" style="display:none">
     <a class="rank-card" href="13_detail.html">
       <div class="rank-thumb"><img src="./assets/img/wave/battleship.png" class="list-img"></div>
@@ -238,7 +308,12 @@
       <div class="rank-meta">미스터리광 · ❤ 290</div></div>
     </a>
   </div>
-  <!-- 기타 -->
+  <!--
+    ==================================
+    기타 
+    ==================================
+    -->
+
   <div class="rank-grid" data-tab-panel="etc" style="display:none">
     <a class="rank-card" href="13_detail.html">
       <div class="rank-thumb"><img src="./assets/img/wave/bumblebee.png" class="list-img"></div>
@@ -277,6 +352,11 @@
     </a>
   </div>
 
+  <!-- 
+    ==================================
+    메인 공지사항 영역
+    ==================================
+  -->
   <div class="section-title mt-40">
     <h2>공지사항</h2>
     <!-- 공지사항 더보기 링크 추가 -나영- -->
@@ -310,7 +390,11 @@
   </div>
 </main>
 
-<!-- 푸터 영역 -->
+<!-- 
+  ==================================
+  푸터 영역 
+  ==================================
+  -->
 <footer class="site-footer main-footer">
   <div class="container main-footer-inner">
     <div class="main-footer-brand">
@@ -329,7 +413,18 @@
   </div>
 </footer>
 
-<!-- 알림 영역 -->
+<!-- 
+  ================================
+  오버레이 영역
+  ================================
+  -->
+<div class="overlay-backdrop" id="notificationBackdrop"></div>
+
+<!-- 
+  ================================
+  알림 영역
+  ================================
+  -->
 <aside class="slide-panel" id="notificationPanel">
   <div class="panel-header"><h3>🔔 알림</h3><button class="panel-close" id="notificationClose">✕</button></div>
   <!-- 알림 내용 -->
@@ -358,28 +453,39 @@
   </div>
 </aside>
 
-<!-- 챗봇 영역 (수정해야됨) -->
+<!-- 
+  ================================
+  챗봇 영역
+  ================================
+  -->
 <button class="fab" id="chatbotFab" title="챗봇 실행">🤖</button>
 <div class="overlay-backdrop" id="chatbotBackdrop"></div>
 <aside class="slide-panel" id="chatbotPanel">
   <div class="panel-header"><h3>🤖 YouFlex 챗봇</h3><button class="panel-close" id="chatbotClose">✕</button></div>
   <div class="panel-body">
-    <div class="chat-msg"><div class="avatar"></div><div class="bubble">무엇을 도와드릴까요?</div></div>
-    <div class="quiz-box">
-      <div class="quiz-count">🎯 오늘 남은 퀴즈 횟수: 2/3</div>
-      <button class="btn btn-sm btn-primary" id="quizStartBtn">퀴즈 시작</button>
-      <div class="quiz-options" id="quizOptions" style="display:none">
-        <button data-correct="false">디즈니플러스</button>
-        <button data-correct="true">넷플릭스</button>
-        <button data-correct="false">티빙</button>
-        <button data-correct="false">웨이브</button>
+    <div class="chat-msg"><div class="avatar"></div><div class="bubble">무엇을 도와드릴까요? 객관식 1문제 + OX 1문제, 하루 3번까지 풀 수 있어요!</div></div>
+    <div class="quiz-box" id="qnaQuizBox">
+      <div class="quiz-count" id="qnaQuizCount">🎯 오늘 남은 퀴즈 횟수: 3/3</div>
+      <button class="btn btn-sm btn-primary" id="qnaQuizStartBtn">퀴즈 시작</button>
+
+      <div id="qnaQuizPlay" style="display:none">
+        <div class="quiz-progress" id="qnaQuizProgress"></div>
+        <div class="quiz-question" id="qnaQuizQuestion"></div>
+        <div class="quiz-options" id="qnaQuizOptions"></div>
+        <button class="btn btn-sm btn-primary" id="qnaQuizNextBtn" style="display:none">다음 문제 ›</button>
       </div>
+
+      <div class="quiz-result" id="qnaQuizResult" style="display:none"></div>
     </div>
   </div>
   <div class="panel-input-row"><input type="text" placeholder="질문을 입력하세요" /><button class="btn btn-primary">전송</button></div>
 </aside>
 
-<!-- 채팅방 영역 -->
+<!-- 
+  ================================
+  채팅방 영역
+  ================================
+  -->
 <div class="overlay-backdrop" id="chatroomBackdrop"></div>
 <aside class="slide-panel" id="chatroomPanel">
   <div class="panel-header"><h3>💬 커뮤니티 채팅</h3><button class="panel-close" id="chatroomClose">✕</button></div>
