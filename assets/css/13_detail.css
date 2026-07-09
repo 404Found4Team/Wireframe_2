@@ -32,8 +32,10 @@
 .owner-actions { display:flex; gap:8px; } /* 작성자 본인 / 관리자에게만 보이는 수정·삭제 버튼 묶음 (data-role-visible로 JS가 표시 제어) */
 
 /* ---------- 평균 별점 + 내 별점 매기기 ---------- */
-.rating-block { display:flex; align-items:center; gap:10px; margin:20px 0; }
+.rating-block { display:flex; align-items:center; gap:10px; margin:10px 0; }
 .rating-block .score { font-size:22px; font-weight:800; color:var(--gold); }
+/* '리뷰 평점'글씨 효과 수정(웅조) */
+.rating-text span{color: lightgray;}
 
 /* ---------- 리뷰 본문 (대표 이미지 + 텍스트 + 관련작품 뱃지) ---------- */
 

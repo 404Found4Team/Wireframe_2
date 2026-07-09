@@ -11,7 +11,7 @@ function setDrafts(drafts) {
   localStorage.setItem(DRAFT_KEY, JSON.stringify(drafts));
 }
 
-// ===== 별점 클릭 처리 ===============
+// ===== 별점 클릭 처리(웅조) ===============
 		let stars  = document.querySelectorAll(".rating-input span");
 		let ratingInput = document.querySelector("input[name='postRating']");
 		
