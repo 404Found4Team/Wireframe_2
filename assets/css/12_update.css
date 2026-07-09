@@ -38,6 +38,9 @@
 .edit-toolbar { display:flex; justify-content:flex-end; align-items:center; margin-top:24px; gap:8px; }
 
 /* tnumbnail 수정(웅조) */
+.form-row > label{
+   margin: 0px;
+}
 .current-thumb > input{
    width: 27%;
    border-style: none;
