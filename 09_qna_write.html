@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="assets/css/common.css" />
 <link rel="stylesheet" href="assets/css/09_qna_write.css" />
 </head>
-<body data-nav-current="notice">
+<body data-nav-current="qna">
 
 
 <!--  
@@ -77,11 +77,12 @@
   <div class="container">
     <ul>
       <li><a href="04_list.html?cat=all" data-nav="all">전체</a></li>
-      <li><a href="05_notice.html" data-nav="notice">공지사항 & Q&A</a></li>
       <li><a href="04_list.html?cat=netflix" data-nav="netflix">넷플릭스</a></li>
       <li><a href="04_list.html?cat=tving" data-nav="tving">티빙</a></li>
       <li><a href="04_list.html?cat=disney" data-nav="disney">디즈니플러스</a></li>
       <li><a href="04_list.html?cat=etc" data-nav="etc">기타</a></li>
+      <li style="margin-left:auto"><a href="05_notice.html" data-nav="notice">공지사항</a></li>
+      <li><a href="05_notice.html#qna" data-nav="qna">Q&A</a></li>
     </ul>
   </div>
 </nav>
@@ -106,8 +107,8 @@
     <div class="form-row">
       <label>공개 여부</label>
       <div class="visibility-options">
-        <label class="visibility-option"><input type="radio" name="qna_is_secret" value="Y" checked /> 공개</label>
-        <label class="visibility-option"><input type="radio" name="qna_is_secret" value="N" /> 비공개</label>
+        <label class="visibility-option"><input type="radio" name="qna_is_secret" value="N" checked /> 공개</label>
+        <label class="visibility-option"><input type="radio" name="qna_is_secret" value="Y" /> 비공개</label>
       </div>
     </div>
     <div class="edit-toolbar">

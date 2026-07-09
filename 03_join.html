@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="assets/css/03_join.css" />
   </head>
   <body>
+
+    <!-- 
+      ================================
+      메인 영역
+      ================================
+    -->
     <main class="auth-wrap">
       <div class="card auth-card">
         <div class="auth-logo">
@@ -16,13 +22,16 @@
           /></a>
         </div>
 
+        <!-- 
+          ================================
+          회원가입 폼 영역
+          ================================
+           -->
         <form
           id="signupForm"
           onsubmit="
             event.preventDefault();
-            openGenreModal();
-          "
-        >
+            openGenreModal();">
           <div class="form-row">
             <label>아이디</label>
             <div class="id-check-row">
@@ -124,7 +133,12 @@
       </div>
     </main>
 
-    <!-- 회원가입 완료 직후: 관심 장르 선택 -->
+    <!-- 
+      ================================
+      회원가입 완료 직후: 관심 장르 선택 
+      ================================
+      - 백 엔드 설명 - DB 에 장르 카테고리에 값 넣고 th:each 로 뽑아와서 표시
+      -->
     <div class="genre-modal-backdrop" id="genreModalBackdrop">
       <div class="genre-modal-card">
         <div class="auth-logo">

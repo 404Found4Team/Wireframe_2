@@ -89,7 +89,7 @@ img { max-width: 100%; display: block; }             /* 이미지가 부모 영�
   display: flex;
   align-items: center;
   max-width: 480px;
-  width: 100%;
+  width: 25rem;
   margin: 0 auto;
   background: var(--bg-2);
   border: 1px solid var(--border);
