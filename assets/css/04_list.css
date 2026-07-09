@@ -23,10 +23,6 @@
 .sort-group button { padding:8px 14px; border-radius:6px; border:1px solid var(--border); background:var(--bg-2); color:var(--text-1); font-size:13px; }
 .sort-group button.active { background:var(--accent); color:#fff; border-color:var(--accent); }
 
-/* ---------- 목록 하단 페이지네이션(1 2 3 4 5 ›) ---------- */
-.pagination { display:flex; justify-content:center; gap:6px; margin:32px 0; }
-.pagination a { width:34px; height:34px; display:flex; align-items:center; justify-content:center; border-radius:6px; border:1px solid var(--border); color:var(--text-1); font-size:13px; }
-.pagination a.active { background:var(--accent); border-color:var(--accent); color:#fff; }
 
 /* ---------- 우측 상단 "✎ 글쓰기" 버튼을 감싸는 영역 (비로그인 시엔 로그인 유도 버튼으로 대체) ---------- */
 .write-btn-wrap { margin-top:16px; text-align:right; }
