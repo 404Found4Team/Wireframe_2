@@ -58,7 +58,7 @@
 
 /* tnumbnail 수정(웅조) */
 .form-row > label{
-   margin: 0px;
+   margin: 10px;
 }
 .current-thumb > input{
    width: 27%;
@@ -66,7 +66,29 @@
    background-color: #0b0d10;;
 }
 
-/* ── 별점 ── */
+/* 관람평 텍스트 노란색-주황색 그라데이션 및 네온 효과(웅조) */
+.gradient-star-text {
+  font-weight: 700; /* 조금 더 두껍게 해야 그라데이션이 잘 보입니다 */
+  background: linear-gradient(135deg, #ffe066 0%, #BAE6FD 50%, #ff6b6b  100%);
+  background-size: 200% auto;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  animation: heading-shine 2s ease-in-out infinite, heading-fade-in 0.6s ease-out;
+  /* 글자가 빛나는 느낌을 주는 텍스트 그림자 효과 */
+  filter: drop-shadow(0 0 6px rgba(243, 156, 18, 0.4));
+  
+  display: inline-block;
+}
+/* 그라데이션이 천천히 좌우로 움직이는 효과 (불꽃이 일렁이는 느낌) */
+@keyframes heading-shine {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+}
+
+/* ── 별점 ──(웅조) */
 /* .stars { color: #f39c12; font-size: 1.1rem; letter-spacing: 2px; }
 .stars-sm { color: #f39c12; font-size: 0.9rem; }
 .rating-input { display: flex; gap: 6px; }
