@@ -11,6 +11,18 @@ function setDrafts(drafts) {
   localStorage.setItem(DRAFT_KEY, JSON.stringify(drafts));
 }
 
+// ===== 취향 선택(웅조)
+document.getElementById('tasteBtn').addEventListener('click', () => {
+  document.getElementById('genreModalBackdrop').classList.add('open');
+});
+document.getElementById('genreCancelBtn').addEventListener('click', () => {
+  document.getElementById('genreModalBackdrop').classList.remove('open');
+});
+document.getElementById('genreSaveBtn').addEventListener('click', () => {
+  document.getElementById('genreModalBackdrop').classList.remove('open');
+  alert('취향이 저장되었습니다. (데모)');
+});
+
 // ===== 별점 클릭 처리(웅조) ===============
 		let stars  = document.querySelectorAll(".rating-input span");
 		let ratingInput = document.querySelector("input[name='postRating']");
