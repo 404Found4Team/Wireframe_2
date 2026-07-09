@@ -155,3 +155,32 @@
   width: 100%;
   height: 229px;
 }
+/* ---------- 섹션 제목 꾸미기 -나영- ---------- */
+.section-heading {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin: 32px 0 20px;   /* 0 → 32px 로 변경 */
+  /* 텍스트에 그라데이션 입히기 */
+  background: linear-gradient(90deg, #ffffff 0%, #ffd47a 60%, var(--accent) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: heading-shine 4s ease-in-out infinite, heading-fade-in 0.6s ease-out;
+}
+
+/* 그라데이션이 천천히 좌우로 움직이는 효과 (불꽃이 일렁이는 느낌) */
+@keyframes heading-shine {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+}
+
+/* 페이지 들어올 때 제목이 살짝 아래에서 떠오르며 나타나는 효과 */
+@keyframes heading-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
