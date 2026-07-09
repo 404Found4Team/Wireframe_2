@@ -32,8 +32,10 @@
 .owner-actions { display:flex; gap:8px; } /* 작성자 본인 / 관리자에게만 보이는 수정·삭제 버튼 묶음 (data-role-visible로 JS가 표시 제어) */
 
 /* ---------- 평균 별점 + 내 별점 매기기 ---------- */
-.rating-block { display:flex; align-items:center; gap:10px; margin:10px 0; }
-.rating-block .score { font-size:22px; font-weight:800; color:var(--gold); }
+.rating-block { display:flex; align-items:center; gap:14px; margin:10px 0; }
+.rating-block .rating-label { font-size:16px; font-weight:600; color:var(--text-2);}
+.rating-block .score { font-size:28px; letter-spacing:3px; color:var(--gold); }
+.rating-block .stars { font-size:24px; font-weight:800; color:var(--gold); }
 /* '리뷰 평점'글씨 효과 수정(웅조) */
 .rating-text span{color: lightgray;}
 
@@ -57,6 +59,11 @@
 .related-works { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:20px 0; font-size:13px; }
 .related-works strong { color:var(--text-1); font-weight:700; margin-right:2px; }
 
+/* ---------- 관련작품 바로 아래, 이 게시글의 장르 카테고리 태그 ---------- */
+.genre-tags { display:flex; align-items:center; flex-wrap:wrap; gap:8px; margin:0 0 20px; }
+.genre-tags-label { font-size:12px; font-weight:700; color:var(--text-2); margin-right:2px; }
+.genre-tag { padding:5px 12px; border-radius:999px; background:var(--bg-2); border:1px solid var(--border); color:var(--text-1); font-size:12px; }
+
 /* ---------- 좋아요 / 북마크 / 신고 버튼 줄 ---------- */
 .interaction-bar { display:flex; gap:10px; margin:28px 0; padding:16px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
 .interaction-bar .btn.active { background: var(--accent); border-color: var(--accent); color:#fff; } /* 이미 좋아요를 누른 상태를 강조 표시 */
@@ -70,12 +77,26 @@
 
 /* 댓글 한 개 (작성자/날짜 + 본문 + 좋아요/신고 버튼) */
 .comment-item { padding: 14px 0; border-bottom: 1px solid var(--border); }
-.comment-item .c-head { display:flex; align-items:center; justify-content:space-between; font-size:13px; margin-bottom:6px; }
+.comment-item .c-head, .reply-item .c-head { display:flex; align-items:center; justify-content:space-between; font-size:13px; margin-bottom:6px; }
 .comment-item .c-head-left { display:flex; align-items:center; gap:6px; } /* 작성자 이름 옆에 BEST 뱃지를 같이 두기 위한 묶음 */
-.comment-item .c-author { font-weight:700; }
-.comment-item .c-date { color:var(--text-2); }
-.comment-item .c-body { font-size:14px; color:var(--text-1); }
+.comment-item .c-author, .reply-item .c-author { font-weight:700; }
+.comment-item .c-date, .reply-item .c-date { color:var(--text-2); }
+.comment-item .c-body, .reply-item .c-body { font-size:14px; color:var(--text-1); }
 .comment-actions { margin-top:6px; display:flex; gap:12px; font-size:12px; color:var(--text-2); }
+.comment-actions .reply-toggle { cursor:pointer; }
+
+/* 댓글 바로 아래, 그 댓글에 달린 대댓글 목록 */
+.reply-list { margin:10px 0 0 24px; display:flex; flex-direction:column; gap:10px; }
+.reply-item { padding-left:12px; border-left:2px solid var(--border); font-size:13px; }
+.reply-item .c-body { font-size:13px; }
+
+/* "답글달기" 클릭 시 댓글 바로 아래 열리는 대댓글 작성폼 */
+.reply-form { display:flex; gap:8px; margin:10px 0 0 24px; }
+.reply-form input { flex:1; background:var(--bg-2); border:1px solid var(--border); border-radius:8px; padding:8px 12px; color:#fff; font-size:13px; }
+
+/* "수정" 클릭 시 댓글/대댓글 본문 자리에 대신 나타나는 인라인 수정폼 */
+.comment-edit-form { display:flex; gap:8px; margin-top:6px; }
+.comment-edit-form input { flex:1; background:var(--bg-2); border:1px solid var(--border); border-radius:8px; padding:8px 12px; color:#fff; font-size:13px; }
 
 /* "🏆 베스트 댓글" / "전체 댓글" 구분용 작은 소제목 */
 .comment-subheading { font-size:13px; font-weight:700; color:var(--text-2); margin:24px 0 10px; }
