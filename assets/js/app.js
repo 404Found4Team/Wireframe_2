@@ -288,9 +288,10 @@ document.addEventListener("DOMContentLoaded", () => {
 // 화면에 .section-heading이 보일 때마다 등장 애니메이션 재생 -나영-
 const headings = document.querySelectorAll('.section-heading');
 const observer = new IntersectionObserver((entries) => {
+  // console.log('IntersectionObserver entries:', entries);
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.style.animation = 'none';
+      // entry.target.style.animation = 'none';
       // 강제로 리플로우 시켜서 애니메이션 재시작
       void entry.target.offsetWidth;
       entry.target.style.animation = 'heading-shine 4s ease-in-out infinite, heading-fade-in 0.6s ease-out';

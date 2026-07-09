@@ -1,3 +1,4 @@
+
 function openReportModal(targetType) {
   const type = targetType === 'comment' ? '댓글' : '게시글';
   document.getElementById('reportTargetChip').textContent = `신고 대상: ${type}`;
@@ -72,3 +73,4 @@ function editComment(el) {
   body.after(form);
   input.focus();
 }
+
