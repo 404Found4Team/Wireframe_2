@@ -129,7 +129,7 @@
     -->
   <div class="section-title mt-40">
     <h2>인기 리뷰글</h2>
-    <a href="04_list.html" class="more">더보기 ›</a>
+    <a href="04_list.html?cat=all" class="more" id="popularMoreLink">더보기 ›</a>
   </div>
   <div class="platform-tabs" data-tab-panels>
     <button class="active" data-tab-target="all">전체</button>
@@ -528,6 +528,14 @@
         .addEventListener("click", function () {
           window.scrollTo({ top: 0, behavior: "smooth" });
         });
+
+      // 인기 리뷰글: 선택한 플랫폼 탭에 맞춰 "더보기" 링크도 해당 플랫폼 목록으로 이동하게
+      document.querySelectorAll(".platform-tabs button").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var moreLink = document.getElementById("popularMoreLink");
+          if (moreLink) moreLink.href = "04_list.html?cat=" + btn.dataset.tabTarget;
+        });
+      });
     </script>
   </body>
 </html>
