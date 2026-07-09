@@ -84,9 +84,7 @@
       <a href="#" class="withdraw-link" id="withdrawBtn">탈퇴신청</a>
   </div>
 
-
-  <!-- 내 글 -->
-  <div data-tab-panel="posts" class="mt-24" style="display:none">
+<div data-tab-panel="posts" class="mt-24" style="display:none">
     <div class="post-row-list">
       <a class="post-row" href="13_detail.html">
         <div class="post-row-thumb">
@@ -113,40 +111,78 @@
         <div class="post-row-right">2026-06-26<br/>조회 5.1k</div>
       </a>
     </div>
+
+    <!-- 내글 페이지네이션 추가 -나영- -->
+    <div class="pagination">
+      <button class="page-btn prev" aria-label="이전 페이지">‹</button>
+      <button class="page-btn active">1</button>
+      <button class="page-btn">2</button>
+      <button class="page-btn">3</button>
+      <button class="page-btn next" aria-label="다음 페이지">›</button>
+    </div>
   </div>
 
   <!-- 북마크 -->
   <div data-tab-panel="bookmark" class="mt-24" style="display:none">
-    <div class="post-grid">
-      <a class="post-card" href="13_detail.html">
-        <!-- 북마크 썸네일 추가 -나영-  -->
-        <div class="post-thumb"><img src="./assets/img/disney+/lionking.png" class="bookmark-img"></div>
-        <div class="post-card-body">
-          <div class="post-card-title">「무빙」 최종화, 그 후 이야기</div>
-          <div class="post-card-meta"><span>드라마러버</span><span>3일 전</span></div>
+    <!-- 내글 탭과 구조 통일 (post-grid → post-row-list) -나영- -->
+    <div class="post-row-list">
+      <a class="post-row" href="13_detail.html">
+        <!-- 북마크 썸네일 추가, 클래스 post-thumb→post-row-thumb 로 변경 -나영- -->
+        <div class="post-row-thumb">
+          <!-- 클래스 bookmark-img→post-img 로 변경 -나영- -->
+          <img src="./assets/img/disney+/lionking.png" class="post-img">
         </div>
+        <!-- 클래스 post-card-body 제거 (post-row 구조엔 불필요) -나영- -->
+        <div>
+          <!-- 클래스 post-card-title→post-row-title 로 변경 -나영- -->
+          <div class="post-row-title">「무빙」 최종화, 그 후 이야기</div>
+          <!-- 클래스 post-card-meta→post-row-sub 로 변경, 날짜는 오른쪽으로 이동 -나영- -->
+          <div class="post-row-sub">드라마러버</div>
+        </div>
+        <!-- 날짜 내글처럼 오른쪽에 배치 -나영- -->
+        <div class="post-row-right">3일 전</div>
       </a>
-      <a class="post-card" href="13_detail.html">
-         <!-- 북마크 썸네일 추가 -나영-  -->
-        <div class="post-thumb"><img src="./assets/img/tving/blacklight.png" class="bookmark-img"></div>
-        <div class="post-card-body">
-          <div class="post-card-title">애니 「던전밥」 원작 팬의 시청 후기</div>
-          <div class="post-card-meta"><span>애니덕후</span><span>1주 전</span></div>
+      <a class="post-row" href="13_detail.html">
+        <!-- 북마크 썸네일 추가, 클래스 post-thumb→post-row-thumb 로 변경 -나영- -->
+        <div class="post-row-thumb">
+          <!-- 클래스 bookmark-img→post-img 로 변경 -나영- -->
+          <img src="./assets/img/tving/blacklight.png" class="post-img">
         </div>
+        <div>
+          <!-- 클래스 post-card-title→post-row-title 로 변경 -나영- -->
+          <div class="post-row-title">애니 「던전밥」 원작 팬의 시청 후기</div>
+          <!-- 클래스 post-card-meta→post-row-sub 로 변경, 날짜는 오른쪽으로 이동 -나영- -->
+          <div class="post-row-sub">애니덕후</div>
+        </div>
+        <!-- 날짜 내글처럼 오른쪽에 배치 -나영- -->
+        <div class="post-row-right">1주 전</div>
       </a>
-       <a class="post-card" href="13_detail.html">
-        <div class="post-thumb">
-           <!-- 북마크 썸네일 추가 -나영-  -->
-          <img src="./assets/img/tving/now_you_see_me.png" class="bookmark-img">
+      <a class="post-row" href="13_detail.html">
+        <!-- 북마크 썸네일 추가, 클래스 post-thumb→post-row-thumb 로 변경 -나영- -->
+        <div class="post-row-thumb">
+          <!-- 클래스 bookmark-img→post-img 로 변경 -나영- -->
+          <img src="./assets/img/tving/now_you_see_me.png" class="post-img">
         </div>
-        <div class="post-card-body">
-          <div class="post-card-title">애니 「던전밥」 원작 팬의 시청 후기</div>
-          <div class="post-card-meta"><span>애니덕후</span><span>1주 전</span></div>
+        <div>
+          <!-- 클래스 post-card-title→post-row-title 로 변경 -나영- -->
+          <div class="post-row-title">애니 「던전밥」 원작 팬의 시청 후기</div>
+          <!-- 클래스 post-card-meta→post-row-sub 로 변경, 날짜는 오른쪽으로 이동 -나영- -->
+          <div class="post-row-sub">애니덕후</div>
         </div>
+        <!-- 날짜 내글처럼 오른쪽에 배치 -나영- -->
+        <div class="post-row-right">1주 전</div>
       </a>
     </div>
-  </div>
 
+    <!-- 북마크 페이지네이션 추가 -나영- -->
+    <div class="pagination">
+      <button class="page-btn prev" aria-label="이전 페이지">‹</button>
+      <button class="page-btn active">1</button>
+      <button class="page-btn">2</button>
+      <button class="page-btn">3</button>
+      <button class="page-btn next" aria-label="다음 페이지">›</button>
+    </div>
+  </div>
   <!-- 포인트 내역 -->
   <div data-tab-panel="points" class="mt-24" style="display:none">
     <table class="table">
@@ -206,7 +242,7 @@
       <button type="button" class="genre-chip" data-genre="다큐멘터리"><span>다큐멘터리</span>
         <span class="chip-check">✓</span></button>
       <button type="button" class="genre-chip selected" data-genre="드라마"><span>드라마</span>
-        span class="chip-check">✓</span></button>
+        <span class="chip-check">✓</span></button>
       <button type="button" class="genre-chip" data-genre="가족"><span>가족</span>
         <span class="chip-check">✓</span></button>
       <button type="button" class="genre-chip" data-genre="판타지"><span>판타지</span>
