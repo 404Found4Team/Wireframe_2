@@ -298,4 +298,11 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.3 });
 
+// 푸터 - 맨 위로 가기 버튼
 headings.forEach(h => observer.observe(h));
+
+document
+        .getElementById("footerTopBtn")
+        .addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
