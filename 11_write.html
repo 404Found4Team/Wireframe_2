@@ -63,13 +63,35 @@
     <!-- 별점 수정(웅조) -->
      <div class="form-group">
 				<label>별점 ★</label>
-				<div class="rating-input">
+				<!-- <div class="rating-input">
 					<span class="active">★</span>
 					<span class="active">★</span>
 					<span class="active">★</span>
 					<span class="active">★</span>
 					<span>★</span>
-				</div>
+				</div> -->
+        <div class="rating-input">
+  <div class="star-box" data-value="1">
+    <span class="half left">★</span>
+    <span class="half right">★</span>
+  </div>
+  <div class="star-box" data-value="2">
+    <span class="half left">★</span>
+    <span class="half right">★</span>
+  </div>
+  <div class="star-box" data-value="3">
+    <span class="half left">★</span>
+    <span class="half right">★</span>
+  </div>
+  <div class="star-box" data-value="4">
+    <span class="half left">★</span>
+    <span class="half right">★</span>
+  </div>
+  <div class="star-box" data-value="5">
+    <span class="half left">★</span>
+    <span class="half right">★</span>
+  </div>
+</div>
 				<!-- 별점값 js에서 클릭시 value를 업데이트 -->
 				<input type="hidden" name="postRating" value="4">
 				<div class="text-muted text-sm mt-8">별을 클릭해서 별점을 선택하세요 (1~5점)</div>
