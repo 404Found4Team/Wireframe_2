@@ -12,11 +12,16 @@
 /* "♡ 취향 선택" 알약 버튼 수정(웅조)*/
 .review-genre-box{
   align-items: center;
+  justify-content: center;
+}
+.review-genre-box >button{
+  align-items: center;
+  justify-content: center;
 }
 .taste-btn {
   display:inline-flex; align-items:center; gap:6px; background:var(--bg-3); border:1px solid var(--border);
   border-radius:999px; padding:5px 14px; font-size:12px; font-weight:600; color:var(--text-1);
-  margin-left:auto; width: 100px; height: 40px;
+  margin-left:auto; width: 120px; height: 40px;
 }
 .taste-btn:hover { border-color:var(--accent); color:var(--accent); }
 
