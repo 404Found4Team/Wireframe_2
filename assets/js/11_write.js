@@ -12,6 +12,7 @@ function setDrafts(drafts) {
 }
 
 // ===== 취향 선택(웅조)
+// 취향(관심 장르) 선택
 document.getElementById('tasteBtn').addEventListener('click', () => {
   document.getElementById('genreModalBackdrop').classList.add('open');
 });
