@@ -25,41 +25,98 @@ document.getElementById('genreSaveBtn').addEventListener('click', () => {
 });
 
 // ===== 별점 클릭 처리(웅조) ===============
-		let stars  = document.querySelectorAll(".rating-input span");
-		let ratingInput = document.querySelector("input[name='postRating']");
+		// let stars  = document.querySelectorAll(".rating-input span");
+		// let ratingInput = document.querySelector("input[name='postRating']");
 		
-		console.log(stars);
-		console.log(ratingInput);
+		// console.log(stars);
+		// console.log(ratingInput);
 		
-		// 별 표시 업데이트 - rating 개수만큼 active(노란색), 나머지는 비활성화
-		function updateStars(rating){
-			stars.forEach(function(s, i){
-				if(i < rating){
-					s.classList.add("active");
-				} else{
-					s.classList.remove("active");
-				}
-			});
-		}
+		// // 별 표시 업데이트 - rating 개수만큼 active(노란색), 나머지는 비활성화
+		// function updateStars(rating){
+		// 	stars.forEach(function(s, i){
+		// 		if(i < rating){
+		// 			s.classList.add("active");
+		// 		} else{
+		// 			s.classList.remove("active");
+		// 		}
+		// 	});
+		// }
 		
-		stars.forEach(function(star, index){
-			// 클릭 이벤트 - 별점 확정 + hidden필드 값 변경
-			star.addEventListener("click", function(){
-				ratingInput.value = index + 1;
-				updateStars(index + 1);
-				console.log(ratingInput);
-			});
+		// stars.forEach(function(star, index){
+		// 	// 클릭 이벤트 - 별점 확정 + hidden필드 값 변경
+		// 	star.addEventListener("click", function(){
+		// 		ratingInput.value = index + 1;
+		// 		updateStars(index + 1);
+		// 		console.log(ratingInput);
+		// 	});
 			
-			// 마우스 올릴때 - 미리보기(해당 별까지 노란색으로 표시)
-			star.addEventListener("mouseover", function(){
-				updateStars(index + 1);
-			});
+		// 	// 마우스 올릴때 - 미리보기(해당 별까지 노란색으로 표시)
+		// 	star.addEventListener("mouseover", function(){
+		// 		updateStars(index + 1);
+		// 	});
 			
-			// 마우스 나갈때 - 현재 확정된 별점으로 유지
-		 	star.addEventListener("mouseout", function(){
-				updateStars(parseInt(ratingInput.value));
-			});
-		});
+		// 	// 마우스 나갈때 - 현재 확정된 별점으로 유지
+		//  	star.addEventListener("mouseout", function(){
+		// 		updateStars(parseInt(ratingInput.value));
+		// 	});
+		// });
+    // ===== 별점 클릭 처리 (0.5점 단위 수정) ===============
+const starBoxes = document.querySelectorAll(".star-box");
+const ratingInput = document.querySelector("input[name='postRating']");
+const allHalves = document.querySelectorAll(".star-box .half");
+
+// 현재 평점(score)에 맞춰서 모든 반 칸 별의 색상을 업데이트하는 함수
+function updateStars(score) {
+  allHalves.forEach((half) => {
+    const parentBox = half.closest(".star-box");
+    const boxValue = parseFloat(parentBox.getAttribute("data-value"));
+    
+    // 왼쪽 반 칸은 (부모값 - 0.5) 점수를 의미함
+    if (half.classList.contains("left")) {
+      if (boxValue - 0.5 <= score) {
+        half.classList.add("active");
+      } else {
+        half.classList.remove("active");
+      }
+    } 
+    // 오른쪽 반 칸은 부모값 전체 점수를 의미함
+    else if (half.classList.contains("right")) {
+      if (boxValue <= score) {
+        half.classList.add("active");
+      } else {
+        half.classList.remove("active");
+      }
+    }
+  });
+}
+
+// 초기 화면 로드 시 hidden input에 적힌 점수대로 별 표시
+updateStars(parseFloat(ratingInput.value || 0));
+
+allHalves.forEach((half) => {
+  // 해당 반 칸이 의미하는 정확한 점수 계산
+  const parentBox = half.closest(".star-box");
+  const boxValue = parseFloat(parentBox.getAttribute("data-value"));
+  const currentHalfScore = half.classList.contains("left") ? boxValue - 0.5 : boxValue;
+
+  // 1. 클릭 시 점수 확정
+  half.addEventListener("click", () => {
+    ratingInput.value = currentHalfScore;
+    updateStars(currentHalfScore);
+    console.log("확정된 별점:", ratingInput.value);
+  });
+
+  // 2. 마우스 올리면 해당 점수까지 미리보기
+  half.addEventListener("mouseover", () => {
+    updateStars(currentHalfScore);
+  });
+
+  // 3. 마우스가 벗어나면 기존에 확정됐던 점수로 복구
+  half.addEventListener("mouseout", () => {
+    const confirmedScore = parseFloat(ratingInput.value || 0);
+    updateStars(confirmedScore);
+  });
+});
 
 // ===== 사진 업로드 미리보기 수정(웅조)===== 
 		// [1] 파일 선택칸과 미리보기 이미지를 가져온다
