@@ -49,7 +49,20 @@
   ================================
 -->
 <main class="container">
-  <div class="list-toolbar">
+  <div class="post-row-list mt-16">
+    <a class="post-row" href="06_notice_detail.html" style="background:var(--bg-2)">
+      <div class="post-row-thumb" style="display:flex;align-items:center;justify-content:center;background:transparent">
+        <span class="badge badge-admin">공지</span>
+      </div>
+      <div>
+        <div class="post-row-title">[공지] 비속어 필터링 정책 및 경고 제도 안내</div>
+        <div class="post-row-sub">공지사항 · 운영자</div>
+      </div>
+      <div class="post-row-right"></div>  <!--'상단고정' 텍스트 제거 완료-->
+    </a>
+  </div>
+
+  <div class="list-toolbar mt-16">
     <div class="sort-group">
       <button class="active">최신순</button>
       <button>좋아요순</button>
@@ -64,19 +77,6 @@
     <div class="write-btn-wrap" data-role-visible="guest" style="margin-top:0">
       <button class="btn" onclick="if(confirm('로그인이 필요한 기능입니다. 로그인 페이지로 이동할까요?')) location.href='02_login.html'">✎ 글쓰기</button>
     </div>
-  </div>
-
-  <div class="post-row-list mt-16">
-    <a class="post-row" href="06_notice_detail.html" style="background:var(--bg-2)">
-      <div class="post-row-thumb" style="display:flex;align-items:center;justify-content:center;background:transparent">
-        <span class="badge badge-admin">공지</span>
-      </div>
-      <div>
-        <div class="post-row-title">[공지] 비속어 필터링 정책 및 경고 제도 안내</div>
-        <div class="post-row-sub">공지사항 · 운영자</div>
-      </div>
-      <div class="post-row-right"></div>  <!--'상단고정' 텍스트 제거 완료-->
-    </a>
   </div>
 
   <div class="post-grid mt-16">
@@ -161,30 +161,55 @@
             <option>최근 1개월</option>
             <option>최근 3개월</option>
           </select>
-          <label>플랫폼</label>
-          <select>
-            <option>전체</option>
-            <option>넷플릭스</option>
-            <option>티빙</option>
-            <option>디즈니플러스</option>
-            <option>기타</option>
-          </select>
+          <label>취향선택</label>
+          <button type="button" class="btn btn-block" id="listTasteBtn">취향 선택</button>
           <button class="btn btn-primary btn-block mt-16">검색 적용</button>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="pagination">
-    <a href="#">‹</a>
-    <a href="#" class="active">1</a>
-    <a href="#">2</a>
-    <a href="#">3</a>
-    <a href="#">4</a>
-    <a href="#">5</a>
-    <a href="#">›</a>
+  <!-- 리스트 공통 페이지네이션 -나영- -->
+    <div class="pagination">
+      <button class="page-btn prev" aria-label="이전 페이지">‹</button>
+      <button class="page-btn active">1</button>
+      <button class="page-btn">2</button>
+      <button class="page-btn">3</button>
+      <button class="page-btn next" aria-label="다음 페이지">›</button>
+    </div>
   </div>
 </main>
+
+<!-- 취향(관심 장르) 선택 -->
+<div class="genre-modal-backdrop" id="listGenreModalBackdrop">
+  <div class="genre-modal-card">
+    <h2 class="genre-title">취향 선택</h2>
+    <p class="genre-sub">관심 있는 장르를 선택해주세요 (복수 선택 가능)</p>
+    <div class="genre-grid">
+      <button type="button" class="genre-chip" data-genre="액션"><span>액션</span><span class="chip-check">✓</span></button>
+      <button type="button" class="genre-chip" data-genre="모험"><span>모험</span><span class="chip-check">✓</span></button>
+      <button type="button" class="genre-chip" data-genre="애니메이션"><span>애니메이션</span><span class="chip-check">✓</span></button>
+      <button type="button" class="genre-chip" data-genre="코미디"><span>코미디</span><span class="chip-check">✓</span></button>
+      <button type="button" class="genre-chip" data-genre="범죄"><span>범죄</span><span class="chip-check">✓</span></button>
+      <button type="button" class="genre-chip" data-genre="다큐멘터리"><span>다큐멘터리</span><span class="chip-check">✓</span></button>
+      <button type="button" class="genre-chip" data-genre="드라마"><span>드라마</span><span class="chip-check">✓</span></button>
+      <button type="button" class="genre-chip" data-genre="가족"><span>가족</span><span class="chip-check">✓</span></button>
+      <button type="button" class="genre-chip" data-genre="판타지"><span>판타지</span><span class="chip-check">✓</span></button>
+      <button type="button" class="genre-chip" data-genre="역사"><span>역사</span><span class="chip-check">✓</span></button>
+      <button type="button" class="genre-chip" data-genre="공포"><span>공포</span><span class="chip-check">✓</span></button>
+      <button type="button" class="genre-chip" data-genre="뮤지컬"><span>뮤지컬</span><span class="chip-check">✓</span></button>
+      <button type="button" class="genre-chip" data-genre="미스터리"><span>미스터리</span><span class="chip-check">✓</span></button>
+      <button type="button" class="genre-chip" data-genre="로맨스"><span>로맨스</span><span class="chip-check">✓</span></button>
+      <button type="button" class="genre-chip" data-genre="SF"><span>SF</span><span class="chip-check">✓</span></button>
+      <button type="button" class="genre-chip" data-genre="스릴러"><span>스릴러</span><span class="chip-check">✓</span></button>
+      <button type="button" class="genre-chip" data-genre="서부극"><span>서부극</span><span class="chip-check">✓</span></button>
+      <button type="button" class="genre-chip" data-genre="예능"><span>예능</span><span class="chip-check">✓</span></button>
+    </div>
+    <div class="genre-modal-actions">
+      <button type="button" class="btn" id="listGenreCancelBtn">취소</button>
+      <button type="button" class="btn btn-primary" id="listGenreApplyBtn">적용</button>
+    </div>
+  </div>
+</div>
 
 <footer class="site-footer">
   <div class="container">YouFlex 화면 초안 (Wireframe Draft)</div>
