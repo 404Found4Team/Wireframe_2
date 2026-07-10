@@ -413,6 +413,13 @@ body.notification-open #chatbotPanel.slide-panel { right: 408px; }
 .notification-icon { font-size: 18px; flex-shrink: 0; }
 .notification-text { font-size: 13px; color: var(--text-1); line-height: 1.5; }
 .notification-time { font-size: 11px; color: var(--text-2); margin-top: 4px; }
+.notification-delete {
+  margin-left: auto; flex-shrink: 0; align-self: flex-start;
+  width: 20px; height: 20px; border-radius: 50%; border: none; background: none;
+  color: var(--text-2); font-size: 12px; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+} /* 알림 각 줄 오른쪽 끝의 개별 삭제(✕) 버튼 - UI만, 삭제 기능은 미구현 */
+.notification-delete:hover { background: var(--bg-2); color: var(--text-0); }
 
 /* ==========================================================================
    8. 페이지 맨 아래 공통 푸터
