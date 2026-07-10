@@ -93,8 +93,57 @@ function updateStars(score) {
 // 초기 화면 로드 시 hidden input에 적힌 점수대로 별 표시
 updateStars(parseFloat(ratingInput.value || 0));
 
+
+
+// ★ 폭죽 이펙트를 생성하는 새로운 핵심 함수 ★
+function createStarFireworks(element) {
+  // 마우스가 올라간 별 요소를 기준으로 화면 절대 좌표(기하 구조) 계산
+  const rect = element.getBoundingClientRect();
+  const centerX = rect.left + rect.width / 2;
+  const centerY = rect.top + rect.height / 2;
+
+  // 폭죽 조각 개수 설정 (8개~10개 정도가 가장 깔끔합니다)
+  const particleCount = 8;
+  // 화려함을 더해줄 네온 컬러풀 색상 리스트
+  const colors = ['#f39c12', '#ffe066', '#ff6b6b', '#BAE6FD', '#4ade80'];
+
+  for (let i = 0; i < particleCount; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'star-particle';
+
+    // 무작위 색상 및 크기 지정
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    const randomSize = Math.random() * 4 + 4; // 4px ~ 8px
+    particle.style.backgroundColor = randomColor;
+    particle.style.width = `${randomSize}px`;
+    particle.style.height = `${randomSize}px`;
+
+    // 폭죽이 터지기 시작할 중심부 시작 위치 지정
+    particle.style.left = `${centerX - randomSize / 2}px`;
+    particle.style.top = `${centerY - randomSize / 2}px`;
+
+    // 각 조각이 사방으로 퍼져나갈 랜덤 각도와 거리 계산
+    const angle = (i * (360 / particleCount) + Math.random() * 20) * (Math.PI / 180);
+    const distance = Math.random() * 35 + 25; // 퍼지는 반경 (25px ~ 60px)
+    const tx = Math.cos(angle) * distance;
+    const ty = Math.sin(angle) * distance;
+
+    // CSS 애니메이션 변수로 전달
+    particle.style.setProperty('--tx', `${tx}px`);
+    particle.style.setProperty('--ty', `${ty}px`);
+
+    document.body.appendChild(particle);
+
+    // 애니메이션이 끝나면 DOM에서 깔끔하게 삭제 (메모리 관리)
+    particle.addEventListener('animationend', () => {
+      particle.remove();
+    });
+  }
+}
+
+
+// [이벤트 바인딩 부분 수정]
 allHalves.forEach((half) => {
-  // 해당 반 칸이 의미하는 정확한 점수 계산
   const parentBox = half.closest(".star-box");
   const boxValue = parseFloat(parentBox.getAttribute("data-value"));
   const currentHalfScore = half.classList.contains("left") ? boxValue - 0.5 : boxValue;
@@ -106,9 +155,11 @@ allHalves.forEach((half) => {
     console.log("확정된 별점:", ratingInput.value);
   });
 
-  // 2. 마우스 올리면 해당 점수까지 미리보기
+  // 2. 마우스 올리면 해당 점수까지 미리보기 + 폭죽 효과 발생!
   half.addEventListener("mouseover", () => {
     updateStars(currentHalfScore);
+    // 마우스가 닿은 대상(half)을 매개변수로 넘겨 폭죽 가동
+    createStarFireworks(half); 
   });
 
   // 3. 마우스가 벗어나면 기존에 확정됐던 점수로 복구
@@ -117,6 +168,8 @@ allHalves.forEach((half) => {
     updateStars(confirmedScore);
   });
 });
+
+
 
 // ===== 사진 업로드 미리보기 수정(웅조)===== 
 		// [1] 파일 선택칸과 미리보기 이미지를 가져온다
