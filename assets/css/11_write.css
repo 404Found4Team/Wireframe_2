@@ -61,51 +61,7 @@
 .autosave-hint { font-size:12px; color:var(--text-2); }         /* "임시저장된 내용 없음" / "임시저장됨 (HH:MM)" 안내 문구 */
 .autosave-hint.saved { color:var(--success); }                  /* 저장 성공하면 초록색으로 강조 */
 
-/* 관람평 텍스트 노란색-주황색 그라데이션 및 네온 효과(웅조) */
-.gradient-star-text {
-  font-weight: 800;
-  font-size: 1.05rem;
-  
-  /* [핵심 수정] 
-    0%~50% 구간의 색상 배열(#ffd000 → #ff9f43 → #ff6b6b → #a855f7 → #38bdf8)을 
-    50%~100% 구간에서 데칼코마니처럼 역순으로 한 번 더 배치합니다.
-    이렇게 하면 애니메이션이 한 바퀴 돌고 처음으로 돌아갈 때 경계선이 완벽하게 이어집니다.
-  */
-  background: linear-gradient(
-    90deg, 
-    #ffd000 0%, 
-    #ff9f43 15%, 
-    #ff6b6b 30%, 
-    #a855f7 45%, 
-    #38bdf8 50%,
-    #a855f7 55%,
-    #ff6b6b 70%,
-    #ff9f43 85%,
-    #ffd000 100%
-  );
-  
-  /* 배경 크기를 좌우로 크게 늘려주어 색상이 뭉치지 않고 넓게 펴지도록 합니다. */
-  background-size: 200% auto;
 
-  /* 하드웨어 가속으로 애니메이션을 부드럽게 처리 */
-  -webkit-font-smoothing: antialiased;
-  transform: translateZ(0); 
-  
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
-  
-  /* 시간을 6초로 조금 더 늘려 색상이 지나치게 번쩍이지 않고 
-    마치 부드러운 오로라처럼 감성적으로 흐르도록 조절했습니다. 
-  */
-  animation: shine-left-to-right 2s linear infinite;
-  
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
-  
-  display: inline-block;
-  vertical-align: middle;
-}
 
 /* [애니메이션 최적화] 
   0%에서 200%까지 부드럽게 수평 이동하도록 세팅하여 
