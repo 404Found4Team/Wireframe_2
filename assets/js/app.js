@@ -224,6 +224,33 @@ function giveChatWarning() {
   messages.scrollTop = messages.scrollHeight;
 }
 
+// ---- 퀴즈 인터랙션 (챗봇 패널) ----
+function initQuiz() {
+  document.querySelectorAll(".quiz-options button").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const options = btn.parentElement.querySelectorAll("button");
+      const isCorrect = btn.dataset.correct === "true";
+      options.forEach((o) => (o.disabled = true));
+      btn.classList.add(isCorrect ? "correct" : "wrong");
+      if (!isCorrect) {
+        const correctBtn = Array.from(options).find((o) => o.dataset.correct === "true");
+        correctBtn && correctBtn.classList.add("correct");
+      }
+    });
+  });
+}
+
+// ---- 퀴즈 시작 버튼 (챗봇 패널) ----
+function initQuizStart() {
+  const startBtn = document.getElementById("quizStartBtn");
+  const options = document.getElementById("quizOptions");
+  if (!startBtn || !options) return;
+  startBtn.addEventListener("click", () => {
+    options.style.display = "grid";
+    startBtn.disabled = true;
+  });
+}
+
 // ---- 채팅방: 실시간 채팅 입력/전송 & 방 개설(최대 인원) ----
 function initChatroomChat() {
   const messages = document.getElementById("chatroomMessages");
