@@ -63,26 +63,58 @@
 
 /* 관람평 텍스트 노란색-주황색 그라데이션 및 네온 효과(웅조) */
 .gradient-star-text {
-  font-weight: 700; /* 조금 더 두껍게 해야 그라데이션이 잘 보입니다 */
-  background: linear-gradient(135deg, #ffe066 0%, #BAE6FD 50%, #ff6b6b  100%);
+  font-weight: 800;
+  font-size: 1.05rem;
+  
+  /* [핵심 수정] 
+    0%~50% 구간의 색상 배열(#ffd000 → #ff9f43 → #ff6b6b → #a855f7 → #38bdf8)을 
+    50%~100% 구간에서 데칼코마니처럼 역순으로 한 번 더 배치합니다.
+    이렇게 하면 애니메이션이 한 바퀴 돌고 처음으로 돌아갈 때 경계선이 완벽하게 이어집니다.
+  */
+  background: linear-gradient(
+    90deg, 
+    #ffd000 0%, 
+    #ff9f43 15%, 
+    #ff6b6b 30%, 
+    #a855f7 45%, 
+    #38bdf8 50%,
+    #a855f7 55%,
+    #ff6b6b 70%,
+    #ff9f43 85%,
+    #ffd000 100%
+  );
+  
+  /* 배경 크기를 좌우로 크게 늘려주어 색상이 뭉치지 않고 넓게 펴지도록 합니다. */
   background-size: 200% auto;
 
+  /* 하드웨어 가속으로 애니메이션을 부드럽게 처리 */
+  -webkit-font-smoothing: antialiased;
+  transform: translateZ(0); 
+  
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-fill-color: transparent;
-  animation: heading-shine 2s ease-in-out infinite, heading-fade-in 0.6s ease-out;
-  /* 글자가 빛나는 느낌을 주는 텍스트 그림자 효과 */
-  filter: drop-shadow(0 0 6px rgba(243, 156, 18, 0.4));
+  
+  /* 시간을 6초로 조금 더 늘려 색상이 지나치게 번쩍이지 않고 
+    마치 부드러운 오로라처럼 감성적으로 흐르도록 조절했습니다. 
+  */
+  animation: shine-left-to-right 2s linear infinite;
+  
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
   
   display: inline-block;
-}
-/* 그라데이션이 천천히 좌우로 움직이는 효과 (불꽃이 일렁이는 느낌) */
-@keyframes heading-shine {
-  0%, 100% { background-position: 0% center; }
-  50% { background-position: 100% center; }
+  vertical-align: middle;
 }
 
+/* [애니메이션 최적화] 
+  0%에서 200%까지 부드럽게 수평 이동하도록 세팅하여 
+  색상 간의 경계가 완전히 밀려나며 완벽한 무한 루프를 완성합니다.
+*/
+@keyframes shine-left-to-right {
+  0% { background-position: 200% center; }
+  100% { background-position: 0% center; }
+}
 
 /* 별점(웅조) */
 .form-group{
@@ -141,6 +173,29 @@
 /* 활성화(노란색) 상태 스타일 */
 .star-box .half.active {
   color: #f39c12;
+}
+
+/* ---------- 별점 폭죽 효과 파티클 CSS ---------- */
+.star-particle {
+  position: fixed; /* 뷰포트 기준 절대 좌표 배치를 위함 */
+  pointer-events: none; /* 마우스 이벤트를 방해하지 않음 */
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  z-index: 9999;
+  animation: explodeParticle 0.6s ease-out forwards;
+}
+
+@keyframes explodeParticle {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    /* 자바스크립트에서 설정한 커스텀 프로퍼티(--tx, --ty) 방향으로 퍼짐 */
+    transform: translate(var(--tx), var(--ty)) scale(0.3);
+    opacity: 0;
+  }
 }
 
 /* 대표이미지 수정(웅조) */
