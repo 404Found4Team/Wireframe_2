@@ -350,6 +350,9 @@ body.notification-open #chatbotPanel.slide-panel { right: 408px; }
 }
 .panel-header h3 { margin: 0; font-size: 16px; }
 .panel-close { background: none; border: none; color: var(--text-2); font-size: 20px; }
+.notification-clear-row { text-align: right; } /* 알림 패널 헤더 구분선 바로 아래, "모두 삭제" 버튼을 오른쪽 끝에 배치하는 줄 */
+.notification-clear-all { background: none; border: none; color: var(--text-2); font-size: 12px; cursor: pointer; } /* "모두 삭제" - UI만, 기능 미구현 */
+.notification-clear-all:hover { color: var(--text-0); }
 
 /* 채팅방 패널 안의 "목록 / 채팅 / 개설" 탭 버튼 줄 */
 .panel-tabs { display: flex; border-bottom: 1px solid var(--border); flex-shrink: 0; }
