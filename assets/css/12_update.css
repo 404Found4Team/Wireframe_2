@@ -122,3 +122,25 @@
   color: #f39c12;
 }
 
+/* ---------- 별점 폭죽 효과 파티클 CSS ---------- */
+.star-particle {
+  position: fixed; /* 뷰포트 기준 절대 좌표 배치를 위함 */
+  pointer-events: none; /* 마우스 이벤트를 방해하지 않음 */
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  z-index: 9999;
+  animation: explodeParticle 0.6s ease-out forwards;
+}
+
+@keyframes explodeParticle {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    /* 자바스크립트에서 설정한 커스텀 프로퍼티(--tx, --ty) 방향으로 퍼짐 */
+    transform: translate(var(--tx), var(--ty)) scale(0.3);
+    opacity: 0;
+  }
+}

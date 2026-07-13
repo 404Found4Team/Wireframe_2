@@ -93,7 +93,32 @@ function updateStars(score) {
 // 초기 화면 로드 시 hidden input에 적힌 점수대로 별 표시
 updateStars(parseFloat(ratingInput.value || 0));
 
+// [이벤트 바인딩 부분 수정]
+allHalves.forEach((half) => {
+  const parentBox = half.closest(".star-box");
+  const boxValue = parseFloat(parentBox.getAttribute("data-value"));
+  const currentHalfScore = half.classList.contains("left") ? boxValue - 0.5 : boxValue;
 
+  // 1. 클릭 시 점수 확정
+  half.addEventListener("click", () => {
+    ratingInput.value = currentHalfScore;
+    updateStars(currentHalfScore);
+    console.log("확정된 별점:", ratingInput.value);
+  });
+
+  // 2. 마우스 올리면 해당 점수까지 미리보기 + 폭죽 효과 발생!
+  half.addEventListener("mouseover", () => {
+    updateStars(currentHalfScore);
+    // 마우스가 닿은 대상(half)을 매개변수로 넘겨 폭죽 가동
+    createStarFireworks(half); 
+  });
+
+  // 3. 마우스가 벗어나면 기존에 확정됐던 점수로 복구
+  half.addEventListener("mouseout", () => {
+    const confirmedScore = parseFloat(ratingInput.value || 0);
+    updateStars(confirmedScore);
+  });
+});
 
 // ★ 폭죽 이펙트를 생성하는 새로운 핵심 함수 ★
 function createStarFireworks(element) {
@@ -140,36 +165,6 @@ function createStarFireworks(element) {
     });
   }
 }
-
-
-// [이벤트 바인딩 부분 수정]
-allHalves.forEach((half) => {
-  const parentBox = half.closest(".star-box");
-  const boxValue = parseFloat(parentBox.getAttribute("data-value"));
-  const currentHalfScore = half.classList.contains("left") ? boxValue - 0.5 : boxValue;
-
-  // 1. 클릭 시 점수 확정
-  half.addEventListener("click", () => {
-    ratingInput.value = currentHalfScore;
-    updateStars(currentHalfScore);
-    console.log("확정된 별점:", ratingInput.value);
-  });
-
-  // 2. 마우스 올리면 해당 점수까지 미리보기 + 폭죽 효과 발생!
-  half.addEventListener("mouseover", () => {
-    updateStars(currentHalfScore);
-    // 마우스가 닿은 대상(half)을 매개변수로 넘겨 폭죽 가동
-    createStarFireworks(half); 
-  });
-
-  // 3. 마우스가 벗어나면 기존에 확정됐던 점수로 복구
-  half.addEventListener("mouseout", () => {
-    const confirmedScore = parseFloat(ratingInput.value || 0);
-    updateStars(confirmedScore);
-  });
-});
-
-
 
 // ===== 사진 업로드 미리보기 수정(웅조)===== 
 		// [1] 파일 선택칸과 미리보기 이미지를 가져온다
