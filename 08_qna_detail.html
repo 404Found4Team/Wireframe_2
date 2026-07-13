@@ -36,11 +36,11 @@
   -->
 <header class="site-header">
   <div class="container">
-    <a href="01_main.html" class="logo"><img src="assets/img/logo.png" alt="YouFlex" /></a>
+    <a href="./01_main.html" class="logo"><img src="assets/img/logo.png" alt="YouFlex" /></a>
     <div class="search-bar"><span class="icon">🔍</span><input type="text" placeholder="콘텐츠, 게시글 통합 검색" /></div>
     <div class="header-actions">
-      <a href="14_mypage.html" class="btn btn-ghost">마이페이지</a>
-      <a href="#" class="btn btn-ghost">로그아웃</a>
+      <a href="./14_mypage.html" class="btn btn-ghost">마이페이지</a>
+      <a href="./01_main.html" class="btn btn-ghost">로그아웃</a>
       <button class="icon-btn" id="notificationTrigger">🔔<span class="badge">3</span></button>
       <button class="icon-btn" id="chatroomTrigger">💬<span class="badge">3</span></button>
     </div>
@@ -60,7 +60,7 @@
       <a href="02_login.html" class="btn btn-ghost">로그인</a>
       <a href="15_admin.html" class="btn btn-ghost" style="color:var(--danger)">⚙ 관리자 페이지</a>
       <a href="14_mypage.html" class="btn btn-ghost">마이페이지</a>
-      <a href="#" class="btn btn-ghost">로그아웃</a>
+      <a href="./01_main.html" class="btn btn-ghost">로그아웃</a>
       <button class="icon-btn" id="notificationTrigger">🔔<span class="badge">3</span></button>
       <button class="icon-btn" id="chatroomTrigger">💬<span class="badge">3</span></button>
     </div>
@@ -96,8 +96,8 @@
     <div class="notice-detail-title-row">
       <!-- 질문 제목 -->
       <h1 class="notice-detail-title">Q. 디즈니+ 로그인 오류에 어떻게 대처하나요?</h1>
+      <!-- 수정 삭제 버튼 if 문 걸어서 작성자만 보이게 -->
       <div class="owner-actions" data-role-visible="user" style="display:flex;gap:8px;flex-shrink:0">
-        <!-- 수정 삭제 버튼 if 문 걸어서 작성자만 보이게 -->
         <a href="10_qna_update.html" class="btn btn-sm">수정</a>
         <button class="btn btn-sm" style="border-color:var(--danger);color:var(--danger)" onclick="if(confirm('정말 삭제하시겠습니까?')) alert('질문이 삭제되었습니다.')">삭제</button>
       </div>
@@ -134,8 +134,14 @@
           문제가 계속되면 디즈니+ 고객센터로 문의해주시면 더 자세한 안내를 도와드리겠습니다. 감사합니다.</div>
     </div>
 
-    <!-- 
-      ==================================  
+    <!-- 질문 게시글 신고 -->
+    <div style="display:flex;justify-content:flex-end;margin-top:16px;padding-bottom:20px;border-bottom:1px solid var(--border)">
+      <button class="btn btn-sm btn-ghost" data-role-visible="user,critic,admin" onclick="openReportModal()">🚩 신고</button>
+      <button class="btn btn-sm btn-ghost" disabled data-role-visible="guest">🚩 신고</button>
+    </div>
+
+    <!--
+      ==================================
       댓글 영역 -- 호진
       ==================================
       -->
@@ -150,8 +156,26 @@
             <div class="qna-comment-body">저도 같은 문제였는데 조금 기다리니까 해결됐어요!</div>
           </div>
         </div>
-        <!-- 댓글 삭제버튼 (본인만 보이게) -->
-        <button class="btn btn-sm">삭제</button>
+        <div style="display:flex;gap:6px;flex-shrink:0">
+          <button class="btn btn-sm btn-ghost" onclick="toggleReportForm(this)">신고</button>
+          <!-- 댓글 삭제버튼 (본인만 보이게) -->
+          <button class="btn btn-sm">삭제</button>
+        </div>
+        <div class="qna-report-form" style="display:none">
+          <label class="text-muted" style="font-size:12px">신고 사유</label>
+          <select>
+            <option>스팸 / 도배</option>
+            <option>욕설 / 비방</option>
+            <option>음란물</option>
+            <option>저작권 침해</option>
+            <option>기타</option>
+          </select>
+          <textarea placeholder="신고 사유를 구체적으로 입력해주세요"></textarea>
+          <div class="btn-row" style="margin-top:0">
+            <button type="button" class="btn btn-sm" onclick="closeReportForm(this)">취소</button>
+            <button type="button" class="btn btn-sm btn-primary" onclick="submitReportForm(this)">신고하기</button>
+          </div>
+        </div>
       </div>
       <div class="qna-comment-item">
         <div class="qna-comment-left">
@@ -161,7 +185,25 @@
             <div class="qna-comment-body">앱 재설치하니까 바로 됐습니다!</div>
           </div>
         </div>
-        <button class="btn btn-sm">삭제</button>
+        <div style="display:flex;gap:6px;flex-shrink:0">
+          <button class="btn btn-sm btn-ghost" onclick="toggleReportForm(this)">신고</button>
+          <button class="btn btn-sm">삭제</button>
+        </div>
+        <div class="qna-report-form" style="display:none">
+          <label class="text-muted" style="font-size:12px">신고 사유</label>
+          <select>
+            <option>스팸 / 도배</option>
+            <option>욕설 / 비방</option>
+            <option>음란물</option>
+            <option>저작권 침해</option>
+            <option>기타</option>
+          </select>
+          <textarea placeholder="신고 사유를 구체적으로 입력해주세요"></textarea>
+          <div class="btn-row" style="margin-top:0">
+            <button type="button" class="btn btn-sm" onclick="closeReportForm(this)">취소</button>
+            <button type="button" class="btn btn-sm btn-primary" onclick="submitReportForm(this)">신고하기</button>
+          </div>
+        </div>
       </div>
       <div class="qna-comment-item">
         <div class="qna-comment-left">
@@ -171,7 +213,25 @@
             <div class="qna-comment-body">공식 공지 기다리는 중이에요 ㅠㅠ</div>
           </div>
         </div>
-        <button class="btn btn-sm">삭제</button>
+        <div style="display:flex;gap:6px;flex-shrink:0">
+          <button class="btn btn-sm btn-ghost" onclick="toggleReportForm(this)">신고</button>
+          <button class="btn btn-sm">삭제</button>
+        </div>
+        <div class="qna-report-form" style="display:none">
+          <label class="text-muted" style="font-size:12px">신고 사유</label>
+          <select>
+            <option>스팸 / 도배</option>
+            <option>욕설 / 비방</option>
+            <option>음란물</option>
+            <option>저작권 침해</option>
+            <option>기타</option>
+          </select>
+          <textarea placeholder="신고 사유를 구체적으로 입력해주세요"></textarea>
+          <div class="btn-row" style="margin-top:0">
+            <button type="button" class="btn btn-sm" onclick="closeReportForm(this)">취소</button>
+            <button type="button" class="btn btn-sm btn-primary" onclick="submitReportForm(this)">신고하기</button>
+          </div>
+        </div>
       </div>
 
       <div id="commentList"></div>
@@ -192,6 +252,34 @@
     </div>
   </div>
 </main>
+
+<!-- 신고하기 모달 -->
+<div class="report-modal-backdrop" id="reportModalBackdrop">
+  <div class="report-modal">
+    <h2>🚩 신고하기</h2>
+    <div class="target-chip" id="reportTargetChip">신고 대상: 질문</div>
+    <form id="reportForm">
+    <div class="form-row">
+      <label>신고 사유</label>
+      <select id="reportReasonSelect">
+        <option>스팸 / 도배</option>
+        <option>욕설 / 비방</option>
+        <option>음란물</option>
+        <option>저작권 침해</option>
+        <option>기타</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label>상세 내용</label>
+      <textarea id="reportDetailInput" placeholder="신고 사유를 구체적으로 입력해주세요"></textarea>
+    </div>
+    <div class="btn-row">
+      <button type="button" class="btn" onclick="closeReportModal()">취소</button>
+      <button type="button" class="btn btn-primary" onclick="submitReportModal()">신고하기</button>
+    </div>
+    </form>
+  </div>
+</div>
 
 <!-- 
   ==================================
