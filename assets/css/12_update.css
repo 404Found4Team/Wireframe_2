@@ -66,27 +66,7 @@
    background-color: #0b0d10;;
 }
 
-/* 관람평 텍스트 노란색-주황색 그라데이션 및 네온 효과(웅조) */
-.gradient-star-text {
-  font-weight: 700; /* 조금 더 두껍게 해야 그라데이션이 잘 보입니다 */
-  background: linear-gradient(135deg, #ffe066 0%, #BAE6FD 50%, #ff6b6b  100%);
-  background-size: 200% auto;
 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-  animation: heading-shine 2s ease-in-out infinite, heading-fade-in 0.6s ease-out;
-  /* 글자가 빛나는 느낌을 주는 텍스트 그림자 효과 */
-  filter: drop-shadow(0 0 6px rgba(243, 156, 18, 0.4));
-  
-  display: inline-block;
-}
-/* 그라데이션이 천천히 좌우로 움직이는 효과 (불꽃이 일렁이는 느낌) */
-@keyframes heading-shine {
-  0%, 100% { background-position: 0% center; }
-  50% { background-position: 100% center; }
-}
 
 /* ── 별점 ──(웅조) */
 /* .stars { color: #f39c12; font-size: 1.1rem; letter-spacing: 2px; }
@@ -140,4 +120,27 @@
 /* 활성화(노란색) 상태 스타일 */
 .star-box .half.active {
   color: #f39c12;
+}
+
+/* ---------- 별점 폭죽 효과 파티클 CSS ---------- */
+.star-particle {
+  position: fixed; /* 뷰포트 기준 절대 좌표 배치를 위함 */
+  pointer-events: none; /* 마우스 이벤트를 방해하지 않음 */
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  z-index: 9999;
+  animation: explodeParticle 0.6s ease-out forwards;
+}
+
+@keyframes explodeParticle {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    /* 자바스크립트에서 설정한 커스텀 프로퍼티(--tx, --ty) 방향으로 퍼짐 */
+    transform: translate(var(--tx), var(--ty)) scale(0.3);
+    opacity: 0;
+  }
 }
